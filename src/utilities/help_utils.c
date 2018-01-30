@@ -49,7 +49,7 @@ void gen_usage(char *bin, char *args)
 void display_help(char *bin, char **tab)
 {
 	gen_infos();
-	my_putstr("\nUSAGE:\n\t");
+	my_putstr("\nUSAGE:\n");
 	gen_usage(bin, tab[0]);
 	my_putstr("DESCRPTION:\n");
 	gen_description(tab);
