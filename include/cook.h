@@ -8,15 +8,20 @@
 # ifndef COOK_H
 # define COOK_H
 
-# include "my.h"
+# include <SFML/Graphics.h>
 # include <stdbool.h>
+# include <stdlib.h>
+# include <unistd.h>
+
+# include "my.h"
 
 typedef enum states {
-		gameWait, gameRun, gameEnd
+		gameWait, gameRun, gameEnd, gamePause
 }		state_e;
 
 typedef struct data {
-		state_e 	state;
+		sfRenderWindow	*win;
+		state_e 		state;
 }		cook_t;
 
 // main.c
@@ -28,11 +33,20 @@ void 	exit_game(cook_t *data);
 int 	start_game(cook_t *data);
 int 	cook_game(void);
 
-// struct_utilities.c
-int 	configure_assets(cook_t *data);
-cook_t 	*configure(void);
+// managers/events_manager.c
+void 	events_manager(cook_t *data, sfEvent *event);
 
-// help_utils.c
+// utilities/struct_utilities.c
+int 	configure_assets(cook_t *data);
+cook_t 	*configure_struct(void);
+
+// utilities/state_utils.c
+bool 	isGameWait(cook_t *data);
+bool 	isGameRun(cook_t *data);
+bool 	isGameEnd(cook_t *data);
+bool 	isGamePaused(cook_t *data);
+
+// utilities/help_utils.c
 void 	gen_infos(void);
 void 	gen_description(char **tab);
 void 	gen_usage(char *bin, char *args);

@@ -18,7 +18,9 @@ SRCDIR 			= ./src/
 SRCNAMES 		= main.c 					\
 		  	  	  cook.c 					\
 		  	  	  utilities/help_utils.c 	\
-		  	  	  utilities/utilities.c
+		  	  	  utilities/utilities.c 	\
+		  	  	  utilities/state_utils.c 	\
+		  	  	  managers/events_manager.c
 
 SRC 			= $(addprefix $(SRCDIR), $(SRCNAMES))
 

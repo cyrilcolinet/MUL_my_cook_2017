@@ -19,8 +19,8 @@ void gen_infos(void)
 
 void gen_description(char **tab)
 {
-	int i = 0;
-	char **args = NULL;
+	int 	i = 0;
+	char 	**args = NULL;
 
 	while (tab[++i]) {
 		args = my_strtok(tab[i], '|');
