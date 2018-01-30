@@ -13,7 +13,8 @@ void gen_infos(void)
 	my_putstr("Authors: Cyril COLINET, ");
 	my_putstr("Baptiste TOUGOURI\n");
 	my_putstr("Year: 2017-2018 (Promo 2022)\n");
-	my_putstr("Tamalou ? A la bite !\n");
+	my_putstr("Repository: my_cook_2017\n");
+	my_putstr("Binary: my_cook\n");
 }
 
 void gen_description(char **tab)
