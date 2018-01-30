@@ -19,7 +19,7 @@ bool check_args(int ac, char **av)
 	int i;
 
 	for (i = 0; i < ac; i++) {
-		if (my_strequ(av[i]))
+		if (my_strequ(av[i], "-h"))
 			return (help());
 	}
 

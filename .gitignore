@@ -57,3 +57,7 @@ dkms.conf
 
 
 # End of https://www.gitignore.io/api/c
+
+# Project addition
+build/
+my_cook
