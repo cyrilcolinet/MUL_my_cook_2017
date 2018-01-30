@@ -9,12 +9,14 @@
 
 bool help(char *bin)
 {
-	char *tmp;
+	char *tab[3];
 	char *args = "[-h]";
 
-	tmp = "-h|Afficher la page d'aide (cette page).";
+	tab[0] = "[-h]";
+	tab[1] = "-h|Afficher la page d'aide (cette page).";
+	tab[2] = NULL;
 
-	display_help(bin, my_strtok(tmp, '$'), args);
+	display_help(bin, tab);
 
 	return (true);
 }

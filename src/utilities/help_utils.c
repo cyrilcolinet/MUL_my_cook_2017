@@ -9,12 +9,16 @@
 
 void gen_infos(void)
 {
-
+	my_putstr("Project: MyCook\n");
+	my_putstr("Authors: Cyril COLINET, ");
+	my_putstr("Baptiste TOUGOURI\n");
+	my_putstr("Year: 2017-2018 (Promo 2022)\n");
+	my_putstr("Tamalou ? A la bite !\n");
 }
 
 void gen_description(char **tab)
 {
-	int i = -1;
+	int i = 0;
 	char **args = NULL;
 
 	while (tab[++i]) {
@@ -41,12 +45,11 @@ void gen_usage(char *bin, char *args)
 	my_putstr("\n\n");
 }
 
-void display_help(char *bin, char **tab, char *args)
+void display_help(char *bin, char **tab)
 {
 	gen_infos();
 	my_putstr("\nUSAGE:\n\t");
-	gen_usage(bin, args);
+	gen_usage(bin, tab[0]);
 	my_putstr("DESCRPTION:\n");
 	gen_description(tab);
-	my_freetab(tab);
 }

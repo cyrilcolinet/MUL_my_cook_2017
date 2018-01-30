@@ -19,6 +19,6 @@ bool	check_args(int ac, char **av);
 int 	cook_game(void);
 
 // help_utils.c
-void 	display_help(char *bin, char **tab, char *args);
+void 	display_help(char *bin, char **tab);
 
 # endif
