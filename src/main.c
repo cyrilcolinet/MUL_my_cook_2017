@@ -7,9 +7,14 @@
 
 # include "cook.h"
 
-bool help(void)
+bool help(char *bin)
 {
-	my_putstr("Je suis l'aide.\n");
+	char *tmp;
+	char *args = "[-h]";
+
+	tmp = "-h|Afficher la page d'aide (cette page).";
+
+	display_help(bin, my_strtok(tmp, '$'), args);
 
 	return (true);
 }
@@ -20,7 +25,7 @@ bool check_args(int ac, char **av)
 
 	for (i = 0; i < ac; i++) {
 		if (my_strequ(av[i], "-h"))
-			return (help());
+			return (help(av[0]));
 	}
 
 	return (false);

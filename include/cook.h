@@ -12,10 +12,13 @@
 # include <stdbool.h>
 
 // main.c
-bool 	help(void);
+bool 	help(char *bin);
 bool	check_args(int ac, char **av);
 
 // cook.c
 int 	cook_game(void);
+
+// help_utils.c
+void 	display_help(char *bin, char **tab, char *args);
 
 # endif

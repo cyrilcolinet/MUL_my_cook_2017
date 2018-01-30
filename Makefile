@@ -16,7 +16,8 @@ NAME 			= my_cook
 SRCDIR 			= ./src/
 
 SRCNAMES 		= main.c 					\
-		  	  	  cook.c
+		  	  	  cook.c 					\
+		  	  	  utilities/help_utils.c
 
 SRC 			= $(addprefix $(SRCDIR), $(SRCNAMES))
 
@@ -36,7 +37,7 @@ CC 				= gcc
 
 DEBUG 			= -g3
 
-CFLAGS 			= -Wall -Wextra -I$(INC) $(DEBUG)
+CFLAGS 			= -Wall -Wextra -I$(INC) $(DEBUG) --coverage
 
 OBJ 			= $($SRC:.c=.o)
 
