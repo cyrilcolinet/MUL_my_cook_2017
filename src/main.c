@@ -10,7 +10,6 @@
 bool help(char *bin)
 {
 	char *tab[3];
-	char *args = "[-h]";
 
 	tab[0] = "[-h]";
 	tab[1] = "-h|Afficher la page d'aide (cette page).";
