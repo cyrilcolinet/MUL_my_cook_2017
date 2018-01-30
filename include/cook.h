@@ -12,7 +12,10 @@
 # include <stdbool.h>
 
 // main.c
+bool 	help(void);
 bool	check_args(int ac, char **av);
 
+// cook.c
+int 	cook_game(void);
 
 # endif
