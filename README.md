@@ -1,4 +1,4 @@
-# My Cookt - Cooking can be fun
+# My Cook - Cooking can be fun
 
 - **Binary name:** my_cook
 - **Repository name:** my_cook_2017
