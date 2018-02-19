@@ -27,7 +27,10 @@ SRCDIR 						= 	src/
 
 TESTSDIR					= 	tests/
 
-SRCNAMES					= 	main.c
+SRCNAMES					= 	main.c 							\
+								cook.c 							\
+								utilities/args_handling.c 		\
+								utilities/struct_utils.c
 
 SRC 						= 	$(addprefix $(SRCDIR), $(SRCNAMES))
 
@@ -56,7 +59,7 @@ CC 							= 	gcc
 
 CFLAGS 						= 	-Wall -Wextra -I$(INC) $(DEBUG)
 
-LFLAGS						= 	$(if $(filter ok, $(COMPILE_LIBRARY)), -L$(LIBDIR) -lmy, )
+LFLAGS						= 	$(if $(filter ok, $(COMPILE_LIBRARY)), -L$(LIBDIR) -lmy, ) -lc_graph_prog
 
 UNITS_LIBRARY_FLAG			= 	$(LFLAGS) -lcriterion
 
@@ -81,18 +84,13 @@ clean:
 							rm -rf $(BUILDTESTDIR)
 							find -name '*.gc*' -delete -or -name 'vgcore.*' -delete
 							$(if $(filter ok, $(COMPILE_LIBRARY)), make clean -C $(LIBDIR), @$(call INFO, "No lib needed for this project."))
-							make clean -C ./bonus
 							@$(call SUCCESS, "Project fully cleaned.")
 
 fclean: 					clean
 							rm -rf $(NAME)
-							make fclean -C ./bonus
 							$(if $(filter ok, $(COMPILE_LIBRARY)), make fclean -C $(LIBDIR), @$(call INFO, "No lib needed for this project."))
 
 re: 						fclean all
-
-bonus:						clean
-							make -C ./bonus
 
 $(BUILDDIR):
 							mkdir -p $(BUILDDIR)

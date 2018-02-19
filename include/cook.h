@@ -25,6 +25,13 @@ typedef struct data {
 }		cook_t;
 
 // cook.c
+int		cook_game(cook_t *cook);
 int 	cook_main(int ac, char **av);
+
+// utilities/args_handling.c
+int 	check_arguments(int ac, char **av);
+
+// utilities/struct_utils.c
+cook_t 	*configure_struct(void);
 
 # endif
