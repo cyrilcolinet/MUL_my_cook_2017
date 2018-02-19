@@ -10,20 +10,30 @@
 void exit_game(cook_t *cook)
 {
 	sfRenderWindow_destroy(cook->win);
+	destroy_assets(cook);
 }
 
 int cook_game(cook_t *cook)
 {
 	sfEvent event;
+	int status = load_assets(cook);
+
+	if (status != 0)
+		return (status);
 
 	while (sfRenderWindow_isOpen(cook->win)) {
 		poll_event(cook, &event);
 		sfRenderWindow_clear(cook->win, sfBlack);
+
+		// Pointer sur function
+		if (cook->state == gameWait) {
+
+		}
 	}
 
 	exit_game(cook);
 
-	return (0);
+	return (status);
 }
 
 int cook_main(int ac, char **av)
