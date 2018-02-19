@@ -7,11 +7,21 @@
 
 # include "cook.h"
 
+void exit_game(cook_t *cook)
+{
+	sfRenderWindow_destroy(cook->win);
+}
+
 int cook_game(cook_t *cook)
 {
-	while (sfRenderWindow_isOpen(cook->win)) {
+	sfEvent event;
 
+	while (sfRenderWindow_isOpen(cook->win)) {
+		poll_event(cook, &event);
+		sfRenderWindow_clear(cook->win, sfBlack);
 	}
+
+	exit_game(cook);
 
 	return (0);
 }

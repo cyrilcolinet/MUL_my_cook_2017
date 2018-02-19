@@ -30,7 +30,8 @@ TESTSDIR					= 	tests/
 SRCNAMES					= 	main.c 							\
 								cook.c 							\
 								utilities/args_handling.c 		\
-								utilities/struct_utils.c
+								utilities/struct_utils.c 		\
+								events/events_manager.c
 
 SRC 						= 	$(addprefix $(SRCDIR), $(SRCNAMES))
 

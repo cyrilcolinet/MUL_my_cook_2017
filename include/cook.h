@@ -25,6 +25,7 @@ typedef struct data {
 }		cook_t;
 
 // cook.c
+void 	exit_game(cook_t *cook);
 int		cook_game(cook_t *cook);
 int 	cook_main(int ac, char **av);
 
@@ -33,5 +34,8 @@ int 	check_arguments(int ac, char **av);
 
 // utilities/struct_utils.c
 cook_t 	*configure_struct(void);
+
+// events/event_manager.c
+void 	poll_event(cook_t *cook, sfEvent *event);
 
 # endif
