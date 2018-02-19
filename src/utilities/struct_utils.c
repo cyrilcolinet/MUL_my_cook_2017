@@ -40,7 +40,7 @@ void destroy_assets(cook_t *cook)
 
 cook_t *configure_struct(void)
 {
-	cook_t *cook = malloc(sizeof(*cook));
+	cook_t *cook = malloc(sizeof(cook_t));
 	sfVideoMode mode = { 1200, 700, 32 };
 	char *title = "My Cook | v0.0.1";
 
@@ -51,6 +51,7 @@ cook_t *configure_struct(void)
 	cook->win = sfRenderWindow_create(mode, title, sfClose, NULL);
 	cook->assets = malloc(sizeof(assets_t));
 	cook->btn = malloc(sizeof(button_t));
+	sfRenderWindow_setFramerateLimit(cook->win, 60);
 
 	if (cook->assets == NULL || cook->btn == NULL)
 		return (NULL);

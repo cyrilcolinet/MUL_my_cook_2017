@@ -29,6 +29,8 @@ int cook_game(cook_t *cook)
 		if (cook->state == gameWait) {
 
 		}
+
+		sfRenderWindow_display(cook->win);
 	}
 
 	exit_game(cook);
