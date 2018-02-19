@@ -19,7 +19,7 @@ COMPILE_LIBRARY				= $(shell [ -e $(LIBDIR) ] && echo -e "ok" || echo -e "no")
 
 ## Compilation variables
 
-NAME 						= 	navy
+NAME 						= 	my_cook
 
 UNIT 						= 	units
 
