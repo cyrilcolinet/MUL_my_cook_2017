@@ -31,6 +31,7 @@ SRCNAMES					= 	main.c 							\
 								cook.c 							\
 								utilities/args_handling.c 		\
 								utilities/struct_utils.c 		\
+								utilities/debug_utils.c 		\
 								events/events_manager.c 		\
 								assets/buttons_manager.c 		\
 								assets/assets_manager.c 		\

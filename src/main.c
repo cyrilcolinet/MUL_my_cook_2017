@@ -9,7 +9,11 @@
 
 int main(int ac, char **av)
 {
-	int res = cook_main(ac, av);
+	int res = 0;
+
+	debug = true;
+	info("Debugger enabled. (main.c:14)");
+	res = cook_main(ac, av);
 
 	return (res);
 }

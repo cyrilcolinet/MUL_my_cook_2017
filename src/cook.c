@@ -10,6 +10,7 @@
 void exit_game(cook_t *cook)
 {
 	sfRenderWindow_destroy(cook->win);
+	info("Window destroyed!");
 	destroy_assets(cook);
 }
 
@@ -27,12 +28,13 @@ int cook_game(cook_t *cook)
 
 		// Pointer sur function
 		if (cook->state == gameWait) {
-			sfRenderWindow_drawSprite(cook->win, get_sprite(cook, 1), NULL);
+			sfRenderWindow_drawSprite(cook->win, get_sprite(cook, 0), NULL);
 		}
 
 		sfRenderWindow_display(cook->win);
 	}
 
+	info("Window closed. Exiting...");
 	exit_game(cook);
 
 	return (status);
@@ -51,8 +53,10 @@ int cook_main(int ac, char **av)
 	if (cook == NULL)
 		return (84);
 
+	info("Main cook_t struct correctly configured.");
 	status = cook_game(cook);
 	free(cook);
+	info("Project correctly exited. Bye!");
 
 	return (status);
 }

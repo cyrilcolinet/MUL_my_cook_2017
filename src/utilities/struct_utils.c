@@ -11,18 +11,19 @@ int new_asset(cook_t *cook, texture_t texture)
 {
 	assets_t *tmp = cook->assets;
 
-	while (tmp != NULL)
+	while (tmp->next != NULL)
 		tmp = tmp->next;
 
-	tmp = malloc(sizeof(assets_t));
+	tmp->next = malloc(sizeof(assets_t));
 
 	if (tmp == NULL)
 		return (84);
 
-	tmp->texture = texture.texture;
-	tmp->sp = texture.sp;
-	tmp->id = texture.id;
-	tmp->next = NULL;
+	tmp->next->texture = texture.texture;
+	tmp->next->sp = texture.sp;
+	tmp->next->id = texture.id;
+	tmp->next->next = NULL;
+	info("New texture loaded!");
 
 	return (0);
 }
@@ -31,12 +32,14 @@ void destroy_assets(cook_t *cook)
 {
 	assets_t *tmp = cook->assets;
 
-	while (tmp != NULL) {
-		sfSprite_destroy(tmp->sp);
-		sfTexture_destroy(tmp->texture);
-		free(tmp);
+	while (tmp->next != NULL) {
+		sfSprite_destroy(tmp->next->sp);
+		sfTexture_destroy(tmp->next->texture);
+		free(tmp->next);
 		tmp = tmp->next;
 	}
+
+	info("All sprite/textures destroyed!");
 }
 
 cook_t *configure_struct(void)

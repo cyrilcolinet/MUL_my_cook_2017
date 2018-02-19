@@ -21,6 +21,8 @@ struct texture_t;
 struct assets_t;
 struct cook_t;
 
+bool debug;
+
 typedef enum state_e {
 		gameWait,
 		gameRun,
@@ -82,10 +84,17 @@ int 	new_asset(cook_t *cook, texture_t texture);
 void 	destroy_assets(cook_t *cook);
 cook_t 	*configure_struct(void);
 
+// utilities/debug_utils.c
+void 	info(char *msg);
+void 	warning(char *msg);
+
 // events/event_manager.c
 void 	poll_event(cook_t *cook, sfEvent *event);
 
 // assets/assets_manager.c
 int 	load_assets(cook_t *cook);
+
+// assets/sprite_manager.c
+sfSprite *get_sprite(cook_t *cook, int id);
 
 # endif
