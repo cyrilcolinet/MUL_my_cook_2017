@@ -15,6 +15,12 @@
 
 # include "my.h"
 
+struct pos_t;
+struct buton_t;
+struct texture_t;
+struct assets_t;
+struct cook_t;
+
 typedef enum state_e {
 		gameWait,
 		gameRun,
@@ -40,7 +46,7 @@ typedef struct button_t {
 		btnType_e 		type;
 		pos_t 			pos;
 		void 			(*callback)(struct cook_t);
-		button_t 		*next;
+		struct button_t *next;
 } 		button_t;
 
 typedef struct texture_t {
@@ -50,10 +56,9 @@ typedef struct texture_t {
 } 		texture_t;
 
 typedef struct assets_t {
-		assets_t 		*prev;
 		sfTexture 		*texture;
 		sfSprite 		*sp;
-		assets_t 		*next;
+		struct assets_t *next;
 } 		assets_t;
 
 typedef struct cook_t {
