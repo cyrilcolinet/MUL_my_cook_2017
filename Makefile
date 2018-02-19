@@ -34,7 +34,8 @@ SRCNAMES					= 	main.c 							\
 								events/events_manager.c 		\
 								assets/buttons_manager.c 		\
 								assets/assets_manager.c 		\
-								utilities/windows_utils.c
+								utilities/windows_utils.c 		\
+								assets/sprite_manager.c
 
 SRC 						= 	$(addprefix $(SRCDIR), $(SRCNAMES))
 

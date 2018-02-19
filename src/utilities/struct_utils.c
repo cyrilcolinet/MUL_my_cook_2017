@@ -21,6 +21,7 @@ int new_asset(cook_t *cook, texture_t texture)
 
 	tmp->texture = texture.texture;
 	tmp->sp = texture.sp;
+	tmp->id = texture.id;
 	tmp->next = NULL;
 
 	return (0);

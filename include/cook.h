@@ -56,6 +56,7 @@ typedef struct texture_t {
 } 		texture_t;
 
 typedef struct assets_t {
+		int 			id;
 		sfTexture 		*texture;
 		sfSprite 		*sp;
 		struct assets_t *next;
