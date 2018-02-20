@@ -42,27 +42,27 @@ typedef enum btnType_e {
 		btnPause,
 		btnCredits,
 		btnQuit,
-		btnOptions
+		btnOptions,
+		btnNull
 } 		btnType_e;
 
 typedef struct pos_t {
-		int 			start;
-		int 			heigth;
-		int 			width;
+		int 			x;
+		int 			y;
 } 		pos_t;
 
 typedef struct btnconf_t {
 		btnType_e 		type;
-		void 			(*onClick)(struct cook_t, btnType_e);
-		void 			(*onHover)(struct cook_t, btnType_e);
+		void 			(*onClick)(struct cook_t *, btnType_e);
+		void 			(*onHover)(struct cook_t *, btnType_e);
 		pos_t 			pos;
 } 		btnconf_t;
 
 typedef struct button_t {
 		btnType_e 		type;
 		pos_t 			pos;
-		void 			(*onClick)(struct cook_t, btnType_e);
-		void 			(*onHover)(struct cook_t, btnType_e);
+		void 			(*onClick)(struct cook_t *, btnType_e);
+		void 			(*onHover)(struct cook_t *, btnType_e);
 		struct button_t *next;
 } 		button_t;
 
@@ -111,6 +111,11 @@ void 	mouse_button_released(cook_t *cook, sfMouseButtonEvent mouse);
 
 // assets/assets_manager.c
 int 	load_assets(cook_t *cook);
+
+// assets/button_manager.c
+void 	configure_callback(cook_t *cook, btnconf_t conf);
+void 	add_button(cook_t *cook, btnconf_t conf);
+button_t *is_button(cook_t *cook, int x, int y);
 
 // assets/sprite_manager.c
 sfSprite *get_sprite(cook_t *cook, int id);

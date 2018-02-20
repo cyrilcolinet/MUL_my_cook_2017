@@ -34,6 +34,22 @@ void add_button(cook_t *cook, btnconf_t conf)
 	tmp->next->type = conf.type;
 	tmp->next->pos = conf.pos;
 	tmp->next->next = NULL;
-	
+
 	configure_callback(cook, conf);
+}
+
+button_t *is_button(cook_t *cook, int x, int y)
+{
+	button_t *tmp = cook->btn;
+	pos_t pos;
+
+	while (tmp->next != NULL) {
+		pos = tmp->next->pos;
+
+		if (x >= pos.x && x <= pos.x && y >= pos.y && y <= pos.y)
+			return (tmp->next);
+		tmp = tmp->next;
+	}
+
+	return (NULL);
 }
