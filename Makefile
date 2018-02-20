@@ -36,6 +36,7 @@ SRCNAMES					= 	main.c 							\
 								events/mouse_events.c 			\
 								assets/buttons_manager.c 		\
 								assets/assets_manager.c 		\
+								assets/setup/wait_buttons.c 	\
 								utilities/windows_utils.c 		\
 								assets/sprite_manager.c
 
