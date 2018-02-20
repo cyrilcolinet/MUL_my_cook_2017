@@ -51,10 +51,18 @@ typedef struct pos_t {
 		int 			width;
 } 		pos_t;
 
+typedef struct btnconf_t {
+		btnType_e 		type;
+		void 			(*onClick)(struct cook_t, btnType_e);
+		void 			(*onHover)(struct cook_t, btnType_e);
+		pos_t 			pos;
+} 		btnconf_t;
+
 typedef struct button_t {
 		btnType_e 		type;
 		pos_t 			pos;
-		void 			(*callback)(struct cook_t);
+		void 			(*onClick)(struct cook_t, btnType_e);
+		void 			(*onHover)(struct cook_t, btnType_e);
 		struct button_t *next;
 } 		button_t;
 
@@ -97,6 +105,9 @@ void 	warning(char *msg);
 
 // events/event_manager.c
 void 	poll_event(cook_t *cook, sfEvent *event);
+
+// events/mouse_events.c
+void 	mouse_button_released(cook_t *cook, sfMouseButtonEvent mouse);
 
 // assets/assets_manager.c
 int 	load_assets(cook_t *cook);

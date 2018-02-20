@@ -33,6 +33,7 @@ SRCNAMES					= 	main.c 							\
 								utilities/struct_utils.c 		\
 								utilities/debug_utils.c 		\
 								events/events_manager.c 		\
+								events/mouse_events.c 			\
 								assets/buttons_manager.c 		\
 								assets/assets_manager.c 		\
 								utilities/windows_utils.c 		\

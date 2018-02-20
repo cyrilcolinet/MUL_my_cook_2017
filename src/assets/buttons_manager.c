@@ -7,7 +7,19 @@
 
 # include "cook.h"
 
-void add_button(btnType_e type, pos_t pos, cook_t *cook)
+void configure_callback(cook_t *cook, btnconf_t conf)
+{
+	button_t *tmp = cook->btn;
+
+	while (tmp->next != NULL)
+		if (tmp->next->type != conf.type)
+			tmp = tmp->next;
+
+	tmp->next->onClick = conf.onClick;
+	tmp->next->onHover = conf.onHover;
+}
+
+void add_button(cook_t *cook, btnconf_t conf)
 {
 	button_t *tmp = cook->btn;
 
@@ -19,18 +31,9 @@ void add_button(btnType_e type, pos_t pos, cook_t *cook)
 	if (tmp->next == NULL)
 		return;
 
-	tmp->next->type = type;
-	tmp->next->pos = pos;
+	tmp->next->type = conf.type;
+	tmp->next->pos = conf.pos;
 	tmp->next->next = NULL;
-}
-
-void configure_callback(cook_t *cook, btnType_e type, void *onClick)
-{
-	button_t *tmp = cook->btn;
-
-	while (tmp->next != NULL)
-		if (tmp->next->type != type)
-			tmp = tmp->next;
-
-	tmp->next->callback = onClick;
+	
+	configure_callback(cook, conf);
 }
