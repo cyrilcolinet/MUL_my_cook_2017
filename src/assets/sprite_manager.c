@@ -12,9 +12,8 @@ sfSprite *get_sprite(cook_t *cook, int id)
 	assets_t *tmp = cook->assets;
 
 	while (tmp != NULL) {
-		if (tmp->id == id) {
+		if (tmp->id == id)
 			return (tmp->sp);
-		}
 		
 		tmp = tmp->next;
 	}

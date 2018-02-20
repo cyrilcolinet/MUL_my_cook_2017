@@ -15,14 +15,21 @@
 
 # include "my.h"
 
+// Assets id definition
+# define aWaitBg 		(0)
+# define aBtnSp		 	(1)
+
+// Struct prototype
 struct pos_t;
 struct buton_t;
 struct texture_t;
 struct assets_t;
 struct cook_t;
 
+// Debug global variable
 bool debug;
 
+// Struct typedef
 typedef enum state_e {
 		gameWait,
 		gameRun,
