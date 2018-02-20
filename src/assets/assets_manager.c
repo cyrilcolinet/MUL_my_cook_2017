@@ -7,6 +7,27 @@
 
 # include "cook.h"
 
+int new_asset(cook_t *cook, texture_t texture)
+{
+	assets_t *tmp = cook->assets;
+
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+
+	tmp->next = malloc(sizeof(assets_t));
+
+	if (tmp == NULL)
+		return (84);
+
+	tmp->next->texture = texture.texture;
+	tmp->next->sp = texture.sp;
+	tmp->next->id = texture.id;
+	tmp->next->next = NULL;
+	info("New texture loaded!");
+
+	return (0);
+}
+
 void load_buttons(cook_t *cook)
 {
 	setup_play_btn(cook);
@@ -34,7 +55,7 @@ int load_assets(cook_t *cook)
 	text.sp = sfSprite_create();
 	status = new_asset(cook, text);
 
-	//load_buttons(cook);
+	load_buttons(cook);
 
 	return (status);
 }

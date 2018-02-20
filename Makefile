@@ -38,7 +38,8 @@ SRCNAMES					= 	main.c 							\
 								assets/assets_manager.c 		\
 								assets/setup/wait_buttons.c 	\
 								utilities/windows_utils.c 		\
-								assets/sprite_manager.c
+								assets/sprite_manager.c 		\
+								callback/play_btn_callback.c
 
 SRC 						= 	$(addprefix $(SRCDIR), $(SRCNAMES))
 

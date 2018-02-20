@@ -57,14 +57,15 @@ typedef struct texture_t {
 		sfSprite 		*sp;
 } 		texture_t;
 
-typedef struct btnconf_t {
+/*typedef struct btnconf_t {
 		btnType_e 		type;
+		pos_t 			pos;
 		void 			(*onClick)(struct cook_t *, btnType_e);
 		void 			(*onHover)(struct cook_t *, btnType_e);
-		pos_t 			pos;
 		state_e 		state;
 		sfSprite 		*sprite;
-} 		btnconf_t;
+		sfIntRect 		rect;
+} 		btnconf_t;*/
 
 typedef struct button_t {
 		btnType_e 		type;
@@ -72,6 +73,8 @@ typedef struct button_t {
 		void 			(*onClick)(struct cook_t *, btnType_e);
 		void 			(*onHover)(struct cook_t *, btnType_e);
 		state_e 		state;
+		sfSprite 		*sprite;
+		sfIntRect 		rect;
 		struct button_t *next;
 } 		button_t;
 
@@ -99,7 +102,6 @@ int 	cook_main(int ac, char **av);
 int 	check_arguments(int ac, char **av);
 
 // utilities/struct_utils.c
-int 	new_asset(cook_t *cook, texture_t texture);
 void 	destroy_assets(cook_t *cook);
 cook_t 	*configure_struct(void);
 
@@ -114,12 +116,13 @@ void 	poll_event(cook_t *cook, sfEvent *event);
 void 	mouse_button_released(cook_t *cook, sfMouseButtonEvent mouse);
 
 // assets/assets_manager.c
+int 	new_asset(cook_t *cook, texture_t texture);
 void 	load_buttons(cook_t *cook);
 int 	load_assets(cook_t *cook);
 
 // assets/button_manager.c
-void 	configure_callback(cook_t *cook, btnconf_t conf);
-void 	add_button(cook_t *cook, btnconf_t conf);
+void 	configure_callback(cook_t *cook, button_t conf);
+void 	add_button(cook_t *cook, button_t conf);
 button_t *is_button(cook_t *cook, int x, int y);
 
 // assets/setup/wait_buttons.c
@@ -131,5 +134,9 @@ void 	setup_credits_btn(cook_t *cook);
 // assets/sprite_manager.c
 sfSprite *get_sprite(cook_t *cook, int id);
 sfTexture *get_texture(cook_t *cook, int id);
+
+// callback/play_btn_callback.c
+void 	btn_play_click(cook_t *cook, btnType_e type);
+void 	btn_play_hover(cook_t *cook, btnType_e type);
 
 # endif

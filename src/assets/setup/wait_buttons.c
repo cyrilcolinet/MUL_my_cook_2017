@@ -9,18 +9,23 @@
 
 void setup_play_btn(cook_t *cook)
 {
-	btnconf_t conf;
+	button_t conf;
 	sfIntRect rec = { 0, 0, 295, 83 };
-	sfSprite *sprite = get_sprite(cook, aBtnSp);
+	sfSprite *sprite = sfSprite_create();
 	sfTexture *texture = get_texture(cook, aBtnSp);
 
 	sfSprite_setTexture(sprite, texture, sfFalse);
 	sfSprite_setTextureRect(sprite, rec);
 
+	conf.type = btnPlay;
+	conf.onClick = btn_play_click;
+	conf.onHover = btn_play_hover;
+	conf.state = gameWait;
 	conf.sprite = sprite;
+	conf.rect = rec;
+	conf.next = NULL;
 
-	
-
+	info("Configured play button! Now add it.");
 	add_button(cook, conf);
 }
 

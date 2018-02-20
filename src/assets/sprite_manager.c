@@ -26,26 +26,12 @@ sfTexture *get_texture(cook_t *cook, int id)
 	assets_t *tmp = cook->assets;
 
 	while (tmp->next != NULL) {
-		if (tmp->next->id == id)
+		if (tmp->next->id == id) {
 			return (tmp->next->texture);
+		}
 		
 		tmp = tmp->next;
 	}
 
 	return (NULL);
-}
-
-sfIntRect get_rect(cook_t *cook, int id)
-{
-	assets_t *tmp = cook->assets;
-	sfIntRect rec = { 0, 0, 0, 0 };
-
-	while (tmp->next != NULL) {
-		if (tmp->next->id == id)
-			return (tmp->next->rec);
-		
-		tmp = tmp->next;
-	}
-
-	return (rec);
 }

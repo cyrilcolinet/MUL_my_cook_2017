@@ -22,6 +22,8 @@ int cook_game(cook_t *cook)
 	if (status != 0)
 		return (status);
 
+	info("Starting game loop...");
+
 	while (sfRenderWindow_isOpen(cook->win)) {
 		poll_event(cook, &event);
 		sfRenderWindow_clear(cook->win, sfBlack);
