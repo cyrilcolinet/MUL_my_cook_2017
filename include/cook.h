@@ -151,4 +151,14 @@ void 	btn_settings_click(cook_t *cook);
 void 	btn_settings_released(cook_t *cook);
 void 	btn_settings_hover(cook_t *cook);
 
+// callback/credits_btn_callback.c
+void 	btn_credits_click(cook_t *cook);
+void 	btn_credits_released(cook_t *cook);
+void 	btn_credits_hover(cook_t *cook);
+
+// callback/quit_btn_callback.c
+void 	btn_quit_click(cook_t *cook);
+void 	btn_quit_released(cook_t *cook);
+void 	btn_quit_hover(cook_t *cook);
+
 # endif

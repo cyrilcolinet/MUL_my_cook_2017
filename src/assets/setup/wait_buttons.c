@@ -55,12 +55,50 @@ void setup_settings_btn(cook_t *cook)
 	add_button(cook, conf);
 }
 
-void setup_quit_btn(cook_t *cook)
-{
-	(void)cook;
-}
-
 void setup_credits_btn(cook_t *cook)
 {
-	(void)cook;
+	button_t conf;
+	sfIntRect rec = { 2, 507, 295, 82 };
+	sfTexture *texture = get_texture(cook, aBtnSp);
+
+	conf.type = btnCredits;
+	conf.pos.x = 265;
+	conf.pos.y = 500;
+	conf.onClick = btn_credits_click;
+	conf.onHover = btn_credits_hover;
+	conf.onStart = btn_credits_released;
+	conf.state = gameWait;
+	conf.sprite = sfSprite_create();
+	sfSprite_setTexture(conf.sprite, texture, sfFalse);
+	sfSprite_setTextureRect(conf.sprite, rec);
+	sfSprite_setPosition(conf.sprite, conf.pos);
+	conf.rect = rec;
+	conf.next = NULL;
+
+	info("Configured credits button! Now add it.");
+	add_button(cook, conf);
+}
+
+void setup_quit_btn(cook_t *cook)
+{
+	button_t conf;
+	sfIntRect rec = { 2, 765, 295, 82 };
+	sfTexture *texture = get_texture(cook, aBtnSp);
+
+	conf.type = btnQuit;
+	conf.pos.x = 625;
+	conf.pos.y = 500;
+	conf.onClick = btn_quit_click;
+	conf.onHover = btn_quit_hover;
+	conf.onStart = btn_quit_released;
+	conf.state = gameWait;
+	conf.sprite = sfSprite_create();
+	sfSprite_setTexture(conf.sprite, texture, sfFalse);
+	sfSprite_setTextureRect(conf.sprite, rec);
+	sfSprite_setPosition(conf.sprite, conf.pos);
+	conf.rect = rec;
+	conf.next = NULL;
+
+	info("Configured quit button! Now add it.");
+	add_button(cook, conf);
 }
