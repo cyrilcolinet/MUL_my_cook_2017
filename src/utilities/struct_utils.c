@@ -7,6 +7,19 @@
 
 # include "cook.h"
 
+void destroy_buttons(cook_t *cook)
+{
+	button_t *tmp = cook->btn;
+
+	while (tmp->next != NULL) {
+		sfSprite_destroy(tmp->next->sprite);
+		tmp = tmp->next;
+	}
+
+	cook->btn = NULL;
+	info("All buttons destroyed!");
+}
+
 void destroy_assets(cook_t *cook)
 {
 	assets_t *tmp = cook->assets;
@@ -15,10 +28,10 @@ void destroy_assets(cook_t *cook)
 		sfSprite_destroy(tmp->next->sp);
 		sfTexture_destroy(tmp->next->texture);
 		tmp = tmp->next;
-		free(tmp->next);
 	}
 
-	info("All sprite/textures destroyed!");
+	cook->assets = NULL;
+	info("All assets destroyed!");
 }
 
 cook_t *configure_struct(void)

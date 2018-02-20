@@ -104,6 +104,7 @@ int 	cook_main(int ac, char **av);
 int 	check_arguments(int ac, char **av);
 
 // utilities/struct_utils.c
+void 	destroy_buttons(cook_t *cook);
 void 	destroy_assets(cook_t *cook);
 cook_t 	*configure_struct(void);
 

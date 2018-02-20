@@ -9,9 +9,10 @@
 
 void exit_game(cook_t *cook)
 {
+	destroy_assets(cook);
+	destroy_buttons(cook);
 	sfRenderWindow_destroy(cook->win);
 	info("Window destroyed!");
-	destroy_assets(cook);
 }
 
 int cook_game(cook_t *cook)
