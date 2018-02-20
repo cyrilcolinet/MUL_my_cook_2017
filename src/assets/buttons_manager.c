@@ -43,7 +43,6 @@ void add_button(cook_t *cook, button_t conf)
 	tmp->next->sprite = conf.sprite;
 	tmp->next->next = NULL;
 
-	info("New button loaded!");
 	callback(cook, conf);
 }
 

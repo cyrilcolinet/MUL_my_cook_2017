@@ -25,13 +25,12 @@ cook_t *configure_struct(void)
 {
 	cook_t *cook = malloc(sizeof(cook_t));
 	sfVideoMode mode = { 1200, 700, 32 };
-	char *title = "My Cook | v0.0.1";
 
 	if (cook == NULL)
 		return (NULL);
 
 	cook->state = gameWait;
-	cook->win = sfRenderWindow_create(mode, title, sfClose, NULL);
+	cook->win = sfRenderWindow_create(mode, "My Cook | v0.0.1", sfClose, NULL);
 	cook->assets = malloc(sizeof(assets_t));
 	cook->btn = malloc(sizeof(button_t));
 
@@ -39,6 +38,7 @@ cook_t *configure_struct(void)
 		return (NULL);
 
 	sfRenderWindow_setFramerateLimit(cook->win, 60);
+	set_favicon(cook);
 	cook->assets->next = NULL;
 	cook->btn->next = NULL;
 

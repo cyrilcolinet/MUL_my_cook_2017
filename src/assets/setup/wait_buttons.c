@@ -27,8 +27,8 @@ void setup_play_btn(cook_t *cook)
 	conf.rect = rec;
 	conf.next = NULL;
 
-	info("Configured play button! Now add it.");
 	add_button(cook, conf);
+	info("Configured play button!");
 }
 
 void setup_settings_btn(cook_t *cook)
@@ -51,8 +51,8 @@ void setup_settings_btn(cook_t *cook)
 	conf.rect = rec;
 	conf.next = NULL;
 
-	info("Configured settings button! Now add it.");
 	add_button(cook, conf);
+	info("Configured options button!");
 }
 
 void setup_credits_btn(cook_t *cook)
@@ -75,8 +75,8 @@ void setup_credits_btn(cook_t *cook)
 	conf.rect = rec;
 	conf.next = NULL;
 
-	info("Configured credits button! Now add it.");
 	add_button(cook, conf);
+	info("Configured credits button!");
 }
 
 void setup_quit_btn(cook_t *cook)
@@ -99,6 +99,6 @@ void setup_quit_btn(cook_t *cook)
 	conf.rect = rec;
 	conf.next = NULL;
 
-	info("Configured quit button! Now add it.");
 	add_button(cook, conf);
+	info("Configured quit button!");
 }

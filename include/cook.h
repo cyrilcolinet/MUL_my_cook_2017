@@ -111,8 +111,12 @@ cook_t 	*configure_struct(void);
 void 	info(char *msg);
 void 	warning(char *msg);
 
-// events/event_manager.c
+// events/events_manager.c
+void 	mouse_manager(cook_t *cook, sfEvent *event);
 void 	poll_event(cook_t *cook, sfEvent *event);
+
+// events/window_utils.c
+void 	set_favicon(cook_t *cook);
 
 // events/mouse_events.c
 void 	mouse_button_pressed(cook_t *cook, sfMouseButtonEvent mouse);
@@ -125,7 +129,7 @@ void 	load_buttons(cook_t *cook);
 int 	load_assets(cook_t *cook);
 
 // assets/button_manager.c
-void 	configure_callback(cook_t *cook, button_t conf);
+void 	callback(cook_t *cook, button_t conf);
 void 	add_button(cook_t *cook, button_t conf);
 button_t *is_button(cook_t *cook, int x, int y);
 void 	draw_buttons(cook_t *cook);
