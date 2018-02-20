@@ -10,18 +10,20 @@
 void setup_play_btn(cook_t *cook)
 {
 	button_t conf;
-	sfIntRect rec = { 0, 0, 295, 83 };
-	sfSprite *sprite = sfSprite_create();
+	sfIntRect rec = { 2, 1, 295, 82 };
 	sfTexture *texture = get_texture(cook, aBtnSp);
 
-	sfSprite_setTexture(sprite, texture, sfFalse);
-	sfSprite_setTextureRect(sprite, rec);
-
 	conf.type = btnPlay;
+	conf.pos.x = 265;
+	conf.pos.y = 375;
 	conf.onClick = btn_play_click;
 	conf.onHover = btn_play_hover;
+	conf.onStart = btn_play_released;
 	conf.state = gameWait;
-	conf.sprite = sprite;
+	conf.sprite = sfSprite_create();
+	sfSprite_setTexture(conf.sprite, texture, sfFalse);
+	sfSprite_setTextureRect(conf.sprite, rec);
+	sfSprite_setPosition(conf.sprite, conf.pos);
 	conf.rect = rec;
 	conf.next = NULL;
 
@@ -31,7 +33,26 @@ void setup_play_btn(cook_t *cook)
 
 void setup_settings_btn(cook_t *cook)
 {
-	(void)cook;
+	button_t conf;
+	sfIntRect rec = { 2, 253, 295, 82 };
+	sfTexture *texture = get_texture(cook, aBtnSp);
+
+	conf.type = btnSettings;
+	conf.pos.x = 625;
+	conf.pos.y = 375;
+	conf.onClick = btn_settings_click;
+	conf.onHover = btn_settings_hover;
+	conf.onStart = btn_settings_released;
+	conf.state = gameWait;
+	conf.sprite = sfSprite_create();
+	sfSprite_setTexture(conf.sprite, texture, sfFalse);
+	sfSprite_setTextureRect(conf.sprite, rec);
+	sfSprite_setPosition(conf.sprite, conf.pos);
+	conf.rect = rec;
+	conf.next = NULL;
+
+	info("Configured settings button! Now add it.");
+	add_button(cook, conf);
 }
 
 void setup_quit_btn(cook_t *cook)

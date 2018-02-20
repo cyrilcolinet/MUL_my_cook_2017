@@ -11,10 +11,12 @@ void mouse_manager(cook_t *cook, sfEvent *event)
 {
 	sfEventType type = event->type;
 
-	if (type == sfEvtMouseButtonReleased) {
-		sfMouseButtonEvent mouse = event->mouseButton;
-
-		mouse_button_released(cook, mouse);
+	if (type == sfEvtMouseButtonPressed) {
+		mouse_button_pressed(cook, event->mouseButton);
+	} else if (type == sfEvtMouseButtonReleased) {
+		mouse_button_released(cook, event->mouseButton);
+	} else if (type == sfEvtMouseMoved) {
+		mouse_moved(cook, event->mouseMove);
 	}
 }
 

@@ -16,6 +16,7 @@ void callback(cook_t *cook, button_t conf)
 			tmp->next->state = conf.state;
 			tmp->next->onClick = conf.onClick;
 			tmp->next->onHover = conf.onHover;
+			tmp->next->onStart = conf.onStart;
 			break;
 		}
 
@@ -37,6 +38,9 @@ void add_button(cook_t *cook, button_t conf)
 
 	tmp->next->type = conf.type;
 	tmp->next->pos = conf.pos;
+	tmp->next->rect = conf.rect;
+	tmp->next->normal_rect = conf.rect;
+	tmp->next->sprite = conf.sprite;
 	tmp->next->next = NULL;
 
 	info("New button loaded!");
@@ -46,14 +50,17 @@ void add_button(cook_t *cook, button_t conf)
 button_t *is_button(cook_t *cook, int x, int y)
 {
 	button_t *tmp = cook->btn;
-	pos_t pos;
+	sfVector2f pos;
+	sfIntRect rec;
 
 	while (tmp->next != NULL) {
 		pos = tmp->next->pos;
+		rec = tmp->next->rect;
 
-		if (x >= pos.x && x <= pos.x && y >= pos.y && y <= pos.y)
-			if (cook->state == tmp->next->state)
-				return (tmp->next);
+		if (x >= pos.x && x <= (pos.x + rec.width))
+			if (y >= pos.y && y <= (pos.y + rec.height))
+				if (cook->state == tmp->next->state)
+					return (tmp->next);
 
 		tmp = tmp->next;
 	}
@@ -63,5 +70,26 @@ button_t *is_button(cook_t *cook, int x, int y)
 
 void draw_buttons(cook_t *cook)
 {
+	button_t *tmp = cook->btn;
 
+	while (tmp->next != NULL) {
+		if (tmp->next->state == cook->state) {
+			sfRenderWindow_drawSprite(cook->win, tmp->next->sprite, NULL);
+		}
+
+		tmp = tmp->next;
+	}
+}
+
+void reset_to_normal_rect(cook_t *cook)
+{
+	button_t *tmp = cook->btn;
+
+	while (tmp->next != NULL) {
+		if (tmp->next->state == cook->state) {
+			sfSprite_setTextureRect(tmp->next->sprite, tmp->next->normal_rect);
+		}
+
+		tmp = tmp->next;
+	}
 }

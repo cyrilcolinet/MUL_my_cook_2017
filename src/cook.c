@@ -33,6 +33,7 @@ int cook_game(cook_t *cook)
 			sfRenderWindow_drawSprite(cook->win, get_sprite(cook, aWaitBg), NULL);
 		}
 
+		draw_buttons(cook);
 		sfRenderWindow_display(cook->win);
 	}
 

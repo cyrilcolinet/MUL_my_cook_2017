@@ -27,19 +27,20 @@ SRCDIR 						= 	src/
 
 TESTSDIR					= 	tests/
 
-SRCNAMES					= 	main.c 							\
-								cook.c 							\
-								utilities/args_handling.c 		\
-								utilities/struct_utils.c 		\
-								utilities/debug_utils.c 		\
-								events/events_manager.c 		\
-								events/mouse_events.c 			\
-								assets/buttons_manager.c 		\
-								assets/assets_manager.c 		\
-								assets/setup/wait_buttons.c 	\
-								utilities/windows_utils.c 		\
-								assets/sprite_manager.c 		\
-								callback/play_btn_callback.c
+SRCNAMES					= 	main.c 									\
+								cook.c 									\
+								utilities/args_handling.c 				\
+								utilities/struct_utils.c 				\
+								utilities/debug_utils.c 				\
+								events/events_manager.c 				\
+								events/mouse_events.c 					\
+								assets/buttons_manager.c 				\
+								assets/assets_manager.c 				\
+								assets/setup/wait_buttons.c 			\
+								utilities/windows_utils.c 				\
+								assets/sprite_manager.c 				\
+								callback/play_btn_callback.c 			\
+								callback/settings_btn_callback.c
 
 SRC 						= 	$(addprefix $(SRCDIR), $(SRCNAMES))
 

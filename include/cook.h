@@ -42,14 +42,14 @@ typedef enum btnType_e {
 		btnPause,
 		btnCredits,
 		btnQuit,
-		btnOptions,
+		btnSettings,
 		btnNull
 } 		btnType_e;
 
-typedef struct pos_t {
+/*typedef struct pos_t {
 		int 			x;
 		int 			y;
-} 		pos_t;
+} 		pos_t;*/
 
 typedef struct texture_t {
 		int 			id;
@@ -69,12 +69,14 @@ typedef struct texture_t {
 
 typedef struct button_t {
 		btnType_e 		type;
-		pos_t 			pos;
-		void 			(*onClick)(struct cook_t *, btnType_e);
-		void 			(*onHover)(struct cook_t *, btnType_e);
+		sfVector2f		pos;
+		void 			(*onClick)(struct cook_t *);
+		void 			(*onHover)(struct cook_t *);
+		void 			(*onStart)(struct cook_t *);
 		state_e 		state;
 		sfSprite 		*sprite;
 		sfIntRect 		rect;
+		sfIntRect 		normal_rect;
 		struct button_t *next;
 } 		button_t;
 
@@ -113,7 +115,9 @@ void 	warning(char *msg);
 void 	poll_event(cook_t *cook, sfEvent *event);
 
 // events/mouse_events.c
+void 	mouse_button_pressed(cook_t *cook, sfMouseButtonEvent mouse);
 void 	mouse_button_released(cook_t *cook, sfMouseButtonEvent mouse);
+void 	mouse_moved(cook_t *cook, sfMouseMoveEvent mouse);
 
 // assets/assets_manager.c
 int 	new_asset(cook_t *cook, texture_t texture);
@@ -124,6 +128,8 @@ int 	load_assets(cook_t *cook);
 void 	configure_callback(cook_t *cook, button_t conf);
 void 	add_button(cook_t *cook, button_t conf);
 button_t *is_button(cook_t *cook, int x, int y);
+void 	draw_buttons(cook_t *cook);
+void 	reset_to_normal_rect(cook_t *cook);
 
 // assets/setup/wait_buttons.c
 void 	setup_play_btn(cook_t *cook);
@@ -136,7 +142,13 @@ sfSprite *get_sprite(cook_t *cook, int id);
 sfTexture *get_texture(cook_t *cook, int id);
 
 // callback/play_btn_callback.c
-void 	btn_play_click(cook_t *cook, btnType_e type);
-void 	btn_play_hover(cook_t *cook, btnType_e type);
+void 	btn_play_click(cook_t *cook);
+void 	btn_play_released(cook_t *cook);
+void 	btn_play_hover(cook_t *cook);
+
+// callback/settings_btn_callback.c
+void 	btn_settings_click(cook_t *cook);
+void 	btn_settings_released(cook_t *cook);
+void 	btn_settings_hover(cook_t *cook);
 
 # endif

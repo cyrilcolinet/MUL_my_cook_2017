@@ -2,18 +2,18 @@
 ** EPITECH PROJECT, 2018
 ** my_cook
 ** File description:
-** play_btn_callback function
+** settings_btn_callback functions
 */
 
 # include "cook.h"
 
-void btn_play_click(cook_t *cook)
+void btn_settings_click(cook_t *cook)
 {
 	button_t *tmp = cook->btn;
 	sfIntRect rec;
 
 	while (tmp->next != NULL) {
-		if (tmp->next->type == btnPlay) {
+		if (tmp->next->type == btnSettings) {
 			rec = tmp->next->rect;
 			rec.top += 82 * 2;
 
@@ -25,19 +25,19 @@ void btn_play_click(cook_t *cook)
 	}
 }
 
-void btn_play_released(cook_t *cook)
+void btn_settings_released(cook_t *cook)
 {
-	warning("ACTION TO START GAME");
+	warning("OPEN SETTINGS MENU");
 	reset_to_normal_rect(cook);
 }
 
-void btn_play_hover(cook_t *cook)
+void btn_settings_hover(cook_t *cook)
 {
 	button_t *tmp = cook->btn;
 	sfIntRect rec;
 
 	while (tmp->next != NULL) {
-		if (tmp->next->type == btnPlay) {
+		if (tmp->next->type == btnSettings) {
 			rec = tmp->next->rect;
 			rec.top += 82;
 
