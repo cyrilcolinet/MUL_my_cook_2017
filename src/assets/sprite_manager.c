@@ -14,7 +14,6 @@ sfSprite *get_sprite(cook_t *cook, int id)
 	while (tmp->next != NULL) {
 		if (tmp->next->id == id)
 			return (tmp->next->sp);
-		
 		tmp = tmp->next;
 	}
 
@@ -29,7 +28,6 @@ sfTexture *get_texture(cook_t *cook, int id)
 		if (tmp->next->id == id) {
 			return (tmp->next->texture);
 		}
-		
 		tmp = tmp->next;
 	}
 

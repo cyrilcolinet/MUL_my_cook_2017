@@ -31,7 +31,7 @@ int cook_game(cook_t *cook)
 
 		// Pointer sur function
 		if (cook->state == gameWait) {
-			sfRenderWindow_drawSprite(cook->win, get_sprite(cook, aWaitBg), NULL);
+			wait_loop(cook);
 		}
 
 		draw_buttons(cook);

@@ -70,10 +70,12 @@ button_t *is_button(cook_t *cook, int x, int y)
 void draw_buttons(cook_t *cook)
 {
 	button_t *tmp = cook->btn;
+	sfSprite *sprite = NULL;
 
 	while (tmp->next != NULL) {
 		if (tmp->next->state == cook->state) {
-			sfRenderWindow_drawSprite(cook->win, tmp->next->sprite, NULL);
+			sprite = tmp->next->sprite;
+			sfRenderWindow_drawSprite(cook->win, sprite, NULL);
 		}
 
 		tmp = tmp->next;
@@ -83,10 +85,14 @@ void draw_buttons(cook_t *cook)
 void reset_to_normal_rect(cook_t *cook)
 {
 	button_t *tmp = cook->btn;
+	sfSprite *sprite = NULL;
+	sfIntRect rec;
 
 	while (tmp->next != NULL) {
 		if (tmp->next->state == cook->state) {
-			sfSprite_setTextureRect(tmp->next->sprite, tmp->next->normal_rect);
+			sprite = tmp->next->sprite;
+			rec = tmp->next->normal_rect;
+			sfSprite_setTextureRect(sprite, rec);
 		}
 
 		tmp = tmp->next;

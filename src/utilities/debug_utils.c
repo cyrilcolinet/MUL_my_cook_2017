@@ -10,7 +10,7 @@
 void info(char *msg)
 {
 	if (debug) {
-		my_putstr(" => [INF]  ");
+		my_putstr(" [INF]  ");
 		my_putstr(msg);
 		my_putchar('\n');
 	}
@@ -19,7 +19,7 @@ void info(char *msg)
 void warning(char *msg)
 {
 	if (debug) {
-		my_putstr(" => [WARN] ");
+		my_putstr(" [WARN] ");
 		my_putstr(msg);
 		my_putchar('\n');
 	}

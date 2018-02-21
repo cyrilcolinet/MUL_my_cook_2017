@@ -20,14 +20,14 @@
 # define aBtnSp		 	(1)
 
 // Struct prototype
-struct pos_t;
-struct buton_t;
-struct texture_t;
-struct assets_t;
-struct cook_t;
+struct 	pos_t;
+struct 	buton_t;
+struct 	texture_t;
+struct 	assets_t;
+struct 	cook_t;
 
 // Debug global variable
-bool debug;
+bool 	debug;
 
 // Struct typedef
 typedef enum state_e {
@@ -46,26 +46,11 @@ typedef enum btnType_e {
 		btnNull
 } 		btnType_e;
 
-/*typedef struct pos_t {
-		int 			x;
-		int 			y;
-} 		pos_t;*/
-
 typedef struct texture_t {
 		int 			id;
 		sfTexture 		*texture;
 		sfSprite 		*sp;
 } 		texture_t;
-
-/*typedef struct btnconf_t {
-		btnType_e 		type;
-		pos_t 			pos;
-		void 			(*onClick)(struct cook_t *, btnType_e);
-		void 			(*onHover)(struct cook_t *, btnType_e);
-		state_e 		state;
-		sfSprite 		*sprite;
-		sfIntRect 		rect;
-} 		btnconf_t;*/
 
 typedef struct button_t {
 		btnType_e 		type;
@@ -99,6 +84,9 @@ typedef struct cook_t {
 void 	exit_game(cook_t *cook);
 int		cook_game(cook_t *cook);
 int 	cook_main(int ac, char **av);
+
+// game/wait/wait_loop.c
+void 	wait_loop(cook_t *cook);
 
 // utilities/args_handling.c
 int 	check_arguments(int ac, char **av);
