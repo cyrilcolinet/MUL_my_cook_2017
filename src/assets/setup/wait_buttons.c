@@ -10,7 +10,7 @@
 void setup_play_btn(cook_t *cook)
 {
 	button_t conf;
-	sfIntRect rec = { 2, 1, 295, 82 };
+	sfIntRect rec = { 2, 1, 290, 82 };
 	sfTexture *texture = get_texture(cook, aBtnSp);
 
 	conf.type = btnPlay;
@@ -34,7 +34,7 @@ void setup_play_btn(cook_t *cook)
 void setup_settings_btn(cook_t *cook)
 {
 	button_t conf;
-	sfIntRect rec = { 2, 253, 295, 82 };
+	sfIntRect rec = { 2, 253, 290, 82 };
 	sfTexture *texture = get_texture(cook, aBtnSp);
 
 	conf.type = btnSettings;
@@ -58,7 +58,7 @@ void setup_settings_btn(cook_t *cook)
 void setup_credits_btn(cook_t *cook)
 {
 	button_t conf;
-	sfIntRect rec = { 2, 507, 295, 82 };
+	sfIntRect rec = { 2, 507, 290, 82 };
 	sfTexture *texture = get_texture(cook, aBtnSp);
 
 	conf.type = btnCredits;
@@ -82,7 +82,7 @@ void setup_credits_btn(cook_t *cook)
 void setup_quit_btn(cook_t *cook)
 {
 	button_t conf;
-	sfIntRect rec = { 2, 765, 295, 82 };
+	sfIntRect rec = { 2, 765, 290, 82 };
 	sfTexture *texture = get_texture(cook, aBtnSp);
 
 	conf.type = btnQuit;

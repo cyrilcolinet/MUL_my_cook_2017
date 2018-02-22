@@ -42,7 +42,7 @@ int load_assets(cook_t *cook)
 	texture_t text;
 
 	text.id = aWaitBg;
-	text.texture = sfTexture_createFromFile("assets/main_menu.png", NULL);
+	text.texture = sfTexture_createFromFile("assets/pause_menu.png", NULL);
 	text.sp = sfSprite_create();
 	sfSprite_setTexture(text.sp, text.texture, sfFalse);
 	status = new_asset(cook, text);

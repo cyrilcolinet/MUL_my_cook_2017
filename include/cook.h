@@ -18,6 +18,7 @@
 // Assets id definition
 # define aWaitBg 		(0)
 # define aBtnSp		 	(1)
+# define aPauseBg 		(2)
 
 // Struct prototype
 struct 	pos_t;
@@ -31,10 +32,12 @@ bool 	debug;
 
 // Struct typedef
 typedef enum state_e {
+		gameUnknown,
 		gameWait,
 		gameRun,
 		gameEnd,
-		gamePause
+		gamePause,
+		gameOnSettings
 }		state_e;
 
 typedef enum btnType_e {
@@ -76,6 +79,7 @@ typedef struct assets_t {
 typedef struct cook_t {
 		sfRenderWindow	*win;
 		state_e 		state;
+		state_e 		last_st;
 		assets_t 		*assets;
 		button_t 		*btn;
 }		cook_t;

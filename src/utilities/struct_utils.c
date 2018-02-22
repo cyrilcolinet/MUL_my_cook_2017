@@ -43,6 +43,7 @@ cook_t *configure_struct(void)
 	if (cook == NULL)
 		return (NULL);
 	cook->state = gameWait;
+	cook->last_st = gameUnknown;
 	title = "My Cook | v0.0.1";
 	cook->win = sfRenderWindow_create(mode, title, sfClose, NULL);
 	cook->assets = malloc(sizeof(assets_t));
