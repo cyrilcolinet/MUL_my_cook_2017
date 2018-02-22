@@ -43,7 +43,8 @@ SRCNAMES					= 	main.c 									\
 								callback/wait/play_btn_callback.c 		\
 								callback/wait/settings_btn_callback.c 	\
 								callback/wait/credits_btn_callback.c 	\
-								callback/wait/quit_btn_callback.c
+								callback/wait/quit_btn_callback.c 		\
+								views/options_view.c
 
 SRC 						= 	$(addprefix $(SRCDIR), $(SRCNAMES))
 

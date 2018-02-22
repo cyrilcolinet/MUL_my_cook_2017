@@ -19,6 +19,7 @@
 # define aWaitBg 		(0)
 # define aBtnSp		 	(1)
 # define aPauseBg 		(2)
+# define aOptBg 		(3)
 
 // Struct prototype
 struct 	pos_t;
