@@ -7,7 +7,7 @@
 
 # include "cook.h"
 
-void setup_play_btn(cook_t *cook)
+void setup_wait_play_btn(cook_t *cook)
 {
 	button_t conf;
 	sfIntRect rec = { 2, 1, 290, 82 };
@@ -31,7 +31,7 @@ void setup_play_btn(cook_t *cook)
 	info("Configured play button!");
 }
 
-void setup_settings_btn(cook_t *cook)
+void setup_wait_settings_btn(cook_t *cook)
 {
 	button_t conf;
 	sfIntRect rec = { 2, 253, 290, 82 };
@@ -55,7 +55,7 @@ void setup_settings_btn(cook_t *cook)
 	info("Configured options button!");
 }
 
-void setup_credits_btn(cook_t *cook)
+void setup_wait_credits_btn(cook_t *cook)
 {
 	button_t conf;
 	sfIntRect rec = { 2, 507, 290, 82 };
@@ -79,7 +79,7 @@ void setup_credits_btn(cook_t *cook)
 	info("Configured credits button!");
 }
 
-void setup_quit_btn(cook_t *cook)
+void setup_wait_quit_btn(cook_t *cook)
 {
 	button_t conf;
 	sfIntRect rec = { 2, 765, 290, 82 };

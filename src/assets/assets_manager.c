@@ -30,10 +30,10 @@ int new_asset(cook_t *cook, texture_t texture)
 
 void load_buttons(cook_t *cook)
 {
-	setup_play_btn(cook);
-	setup_settings_btn(cook);
-	setup_quit_btn(cook);
-	setup_credits_btn(cook);
+	setup_wait_play_btn(cook);
+	setup_wait_settings_btn(cook);
+	setup_wait_quit_btn(cook);
+	setup_wait_credits_btn(cook);
 }
 
 int load_assets(cook_t *cook)
@@ -42,7 +42,7 @@ int load_assets(cook_t *cook)
 	texture_t text;
 
 	text.id = aWaitBg;
-	text.texture = sfTexture_createFromFile("assets/pause_menu.png", NULL);
+	text.texture = sfTexture_createFromFile("assets/main_menu.png", NULL);
 	text.sp = sfSprite_create();
 	sfSprite_setTexture(text.sp, text.texture, sfFalse);
 	status = new_asset(cook, text);
@@ -53,6 +53,24 @@ int load_assets(cook_t *cook)
 	text.id = aBtnSp;
 	text.texture = sfTexture_createFromFile("assets/buttons.png", NULL);
 	text.sp = sfSprite_create();
+	status = new_asset(cook, text);
+
+	text.id = aPauseBg;
+	text.texture = sfTexture_createFromFile("assets/pause_menu.png", NULL);
+	text.sp = sfSprite_create();
+	sfSprite_setTexture(text.sp, text.texture, sfFalse);
+	status = new_asset(cook, text);
+
+	text.id = aOptBg;
+	text.texture = sfTexture_createFromFile("assets/options_menu.png", NULL);
+	text.sp = sfSprite_create();
+	sfSprite_setTexture(text.sp, text.texture, sfFalse);
+	status = new_asset(cook, text);
+
+	text.id = aCreditsBg;
+	text.texture = sfTexture_createFromFile("assets/main_menu.png", NULL);
+	text.sp = sfSprite_create();
+	sfSprite_setTexture(text.sp, text.texture, sfFalse);
 	status = new_asset(cook, text);
 
 	load_buttons(cook);

@@ -20,6 +20,7 @@
 # define aBtnSp		 	(1)
 # define aPauseBg 		(2)
 # define aOptBg 		(3)
+# define aCreditsBg 	(4)
 
 // Struct prototype
 struct 	pos_t;
@@ -130,10 +131,10 @@ void 	draw_buttons(cook_t *cook);
 void 	reset_to_normal_rect(cook_t *cook);
 
 // assets/setup/wait_buttons.c
-void 	setup_play_btn(cook_t *cook);
-void 	setup_settings_btn(cook_t *cook);
-void 	setup_quit_btn(cook_t *cook);
-void 	setup_credits_btn(cook_t *cook);
+void 	setup_wait_play_btn(cook_t *cook);
+void 	setup_wait_settings_btn(cook_t *cook);
+void 	setup_wait_quit_btn(cook_t *cook);
+void 	setup_wait_credits_btn(cook_t *cook);
 
 // assets/sprite_manager.c
 sfSprite *get_sprite(cook_t *cook, int id);
