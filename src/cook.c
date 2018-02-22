@@ -32,6 +32,8 @@ int cook_game(cook_t *cook)
 		// Pointer sur function
 		if (cook->state == gameWait) {
 			wait_loop(cook);
+		} else if (cook->state == gameOnCredits) {
+			credits_view(cook);
 		}
 
 		draw_buttons(cook);

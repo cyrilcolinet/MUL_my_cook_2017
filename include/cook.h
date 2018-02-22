@@ -39,7 +39,8 @@ typedef enum state_e {
 		gameRun,
 		gameEnd,
 		gamePause,
-		gameOnSettings
+		gameOnSettings,
+		gameOnCredits
 }		state_e;
 
 typedef enum btnType_e {
@@ -48,6 +49,7 @@ typedef enum btnType_e {
 		btnCredits,
 		btnQuit,
 		btnSettings,
+		btnReturn,
 		btnNull
 } 		btnType_e;
 
@@ -60,9 +62,9 @@ typedef struct texture_t {
 typedef struct button_t {
 		btnType_e 		type;
 		sfVector2f		pos;
-		void 			(*onClick)(struct cook_t *);
-		void 			(*onHover)(struct cook_t *);
-		void 			(*onStart)(struct cook_t *);
+		void 			(*onClick)(struct cook_t *, struct button_t *);
+		void 			(*onHover)(struct cook_t *, struct button_t *);
+		void 			(*onStart)(struct cook_t *, struct button_t *);
 		state_e 		state;
 		sfSprite 		*sprite;
 		sfIntRect 		rect;
@@ -123,6 +125,10 @@ int 	new_asset(cook_t *cook, texture_t texture);
 void 	load_buttons(cook_t *cook);
 int 	load_assets(cook_t *cook);
 
+// assets/button_loader.c
+void 	load_wait_buttons(cook_t *cook);
+void 	load_credits_buttons(cook_t *cook);
+
 // assets/button_manager.c
 void 	callback(cook_t *cook, button_t conf);
 void 	add_button(cook_t *cook, button_t conf);
@@ -141,23 +147,34 @@ sfSprite *get_sprite(cook_t *cook, int id);
 sfTexture *get_texture(cook_t *cook, int id);
 
 // callback/play_btn_callback.c
-void 	btn_play_click(cook_t *cook);
-void 	btn_play_released(cook_t *cook);
-void 	btn_play_hover(cook_t *cook);
+void 	btn_play_click(cook_t *cook, button_t *btn);
+void 	btn_play_released(cook_t *cook, button_t *btn);
+void 	btn_play_hover(cook_t *cook, button_t *btn);
 
 // callback/settings_btn_callback.c
-void 	btn_settings_click(cook_t *cook);
-void 	btn_settings_released(cook_t *cook);
-void 	btn_settings_hover(cook_t *cook);
+void 	btn_settings_click(cook_t *cook, button_t *btn);
+void 	btn_settings_released(cook_t *cook, button_t *btn);
+void 	btn_settings_hover(cook_t *cook, button_t *btn);
 
 // callback/credits_btn_callback.c
-void 	btn_credits_click(cook_t *cook);
-void 	btn_credits_released(cook_t *cook);
-void 	btn_credits_hover(cook_t *cook);
+void 	btn_credits_click(cook_t *cook, button_t *btn);
+void 	btn_credits_released(cook_t *cook, button_t *btn);
+void 	btn_credits_hover(cook_t *cook, button_t *btn);
 
 // callback/quit_btn_callback.c
-void 	btn_quit_click(cook_t *cook);
-void 	btn_quit_released(cook_t *cook);
-void 	btn_quit_hover(cook_t *cook);
+void 	btn_quit_click(cook_t *cook, button_t *btn);
+void 	btn_quit_released(cook_t *cook, button_t *btn);
+void 	btn_quit_hover(cook_t *cook, button_t *btn);
+
+// callback/return_callback.c
+void 	btn_return_click(cook_t *cook, button_t *btn);
+void 	btn_return_released(cook_t *cook, button_t *btn);
+void 	btn_return_hover(cook_t *cook, button_t *btn);
+
+// views/credits_view.c
+void 	credits_view(cook_t *cook);
+
+// views/options_view.c
+void 	options_view(cook_t *cook);
 
 # endif

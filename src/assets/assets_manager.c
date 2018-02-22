@@ -30,10 +30,8 @@ int new_asset(cook_t *cook, texture_t texture)
 
 void load_buttons(cook_t *cook)
 {
-	setup_wait_play_btn(cook);
-	setup_wait_settings_btn(cook);
-	setup_wait_quit_btn(cook);
-	setup_wait_credits_btn(cook);
+	load_wait_buttons(cook);
+	load_credits_buttons(cook);
 }
 
 int load_assets(cook_t *cook)
@@ -68,7 +66,7 @@ int load_assets(cook_t *cook)
 	status = new_asset(cook, text);
 
 	text.id = aCreditsBg;
-	text.texture = sfTexture_createFromFile("assets/main_menu.png", NULL);
+	text.texture = sfTexture_createFromFile("assets/credits_menu.png", NULL);
 	text.sp = sfSprite_create();
 	sfSprite_setTexture(text.sp, text.texture, sfFalse);
 	status = new_asset(cook, text);

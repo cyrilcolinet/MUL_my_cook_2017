@@ -2,12 +2,12 @@
 ** EPITECH PROJECT, 2018
 ** my_cook
 ** File description:
-** play_btn_callback function
+** return_callback functions
 */
 
 # include "cook.h"
 
-void btn_play_click(cook_t *cook, button_t *btn)
+void btn_return_click(cook_t *cook, button_t *btn)
 {
 	sfIntRect rec;
 
@@ -17,13 +17,14 @@ void btn_play_click(cook_t *cook, button_t *btn)
 	sfSprite_setTextureRect(btn->sprite, rec);
 }
 
-void btn_play_released(cook_t *cook, button_t *btn)
+void btn_return_released(cook_t *cook, button_t *button)
 {
-	warning("ACTION TO START GAME");
 	reset_to_normal_rect(cook);
+	cook->state = cook->last_st;
+	cook->last_st = gameUnknown;
 }
 
-void btn_play_hover(cook_t *cook, button_t *btn)
+void btn_return_hover(cook_t *cook, button_t *btn)
 {
 	sfIntRect rec;
 

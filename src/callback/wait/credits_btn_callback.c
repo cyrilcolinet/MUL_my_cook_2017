@@ -7,44 +7,29 @@
 
 # include "cook.h"
 
-void btn_credits_click(cook_t *cook)
+void btn_credits_click(cook_t *cook, button_t *btn)
 {
-	button_t *tmp = cook->btn;
 	sfIntRect rec;
 
-	while (tmp->next != NULL) {
-		if (tmp->next->type == btnCredits) {
-			rec = tmp->next->rect;
-			rec.top += 82 * 2;
+	rec = btn->rect;
+	rec.top += 82 * 2;
 
-			sfSprite_setTextureRect(tmp->next->sprite, rec);
-			break;
-		}
-
-		tmp = tmp->next;
-	}
+	sfSprite_setTextureRect(btn->sprite, rec);
 }
 
-void btn_credits_released(cook_t *cook)
+void btn_credits_released(cook_t *cook, button_t *btn)
 {
-	warning("OPEN CREDITS VIEW");
+	cook->last_st = cook->state;
+	cook->state = gameOnCredits;
 	reset_to_normal_rect(cook);
 }
 
-void btn_credits_hover(cook_t *cook)
+void btn_credits_hover(cook_t *cook, button_t *btn)
 {
-	button_t *tmp = cook->btn;
 	sfIntRect rec;
 
-	while (tmp->next != NULL) {
-		if (tmp->next->type == btnCredits) {
-			rec = tmp->next->rect;
-			rec.top += 82;
+	rec = btn->rect;
+	rec.top += 82;
 
-			sfSprite_setTextureRect(tmp->next->sprite, rec);
-			break;
-		}
-
-		tmp = tmp->next;
-	}
+	sfSprite_setTextureRect(btn->sprite, rec);
 }
