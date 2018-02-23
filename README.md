@@ -72,13 +72,13 @@ The following features are **mandatory** if your project is missing one of them 
 
 > :bulb: This project might be your first group project, you should consider organising working sessions with your team mates.
 
-<div align="center"><img src="http://www.vertigogaming.net/CSD/wp-content/uploads/2015/05/CSD_Logo.png" alt="" /></div> 
+<div align="center"><img src="http://www.vertigogaming.net/CSD/wp-content/uploads/2015/05/CSD_Logo.png" alt="" /></div>
 
 ## Authorized functions
 
 - From the C library:
   - malloc, free, memset
-  - rand, srand, time 
+  - rand, srand, time
   - (f)open, (f)read, (f)close, (f)write
   - getline
 - From the CSFML library:
@@ -92,5 +92,21 @@ The following features are **mandatory** if your project is missing one of them 
 > :exclamation: Any unspecified functions are de facto banned.
 
 > :bulb: How can you have a random seed without using `time` function ?
+
+# Table of content
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [My Cook - Cooking can be fun](#my-cook-cooking-can-be-fun)
+- [Subject](#subject)
+	- [Requirements](#requirements)
+		- [Mandatory](#mandatory)
+		- [Must](#must)
+		- [Should](#should)
+		- [Could](#could)
+		- [Would](#would)
+	- [Authorized functions](#authorized-functions)
+- [Table of content](#table-of-content)
+
+<!-- /TOC -->
 
 [Cook Serve Delicious]: https://en.wikipedia.org/wiki/Cook,_Serve,_Delicious!
