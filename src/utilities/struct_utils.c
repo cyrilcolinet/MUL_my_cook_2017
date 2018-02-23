@@ -44,7 +44,7 @@ cook_t *configure_struct(void)
 		return (NULL);
 	cook->state = gameWait;
 	cook->last_st = gameUnknown;
-	title = "My Cook | v0.0.1";
+	title = "My Cook | Menu Principal";
 	cook->win = sfRenderWindow_create(mode, title, sfClose, NULL);
 	cook->assets = malloc(sizeof(assets_t));
 	cook->btn = malloc(sizeof(button_t));

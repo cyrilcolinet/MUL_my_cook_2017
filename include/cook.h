@@ -21,6 +21,7 @@
 # define aPauseBg 		(2)
 # define aOptBg 		(3)
 # define aCreditsBg 	(4)
+# define aOptionsBg		(5)
 
 // Struct prototype
 struct 	pos_t;

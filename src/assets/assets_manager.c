@@ -45,9 +45,6 @@ int load_assets(cook_t *cook)
 	sfSprite_setTexture(text.sp, text.texture, sfFalse);
 	status = new_asset(cook, text);
 
-	if (status != 0)
-		return (status);
-
 	text.id = aBtnSp;
 	text.texture = sfTexture_createFromFile("assets/buttons.png", NULL);
 	text.sp = sfSprite_create();
@@ -67,6 +64,12 @@ int load_assets(cook_t *cook)
 
 	text.id = aCreditsBg;
 	text.texture = sfTexture_createFromFile("assets/credits_menu.png", NULL);
+	text.sp = sfSprite_create();
+	sfSprite_setTexture(text.sp, text.texture, sfFalse);
+	status = new_asset(cook, text);
+
+	text.id = aOptionsBg;
+	text.texture = sfTexture_createFromFile("assets/options_menu.png", NULL);
 	text.sp = sfSprite_create();
 	sfSprite_setTexture(text.sp, text.texture, sfFalse);
 	status = new_asset(cook, text);

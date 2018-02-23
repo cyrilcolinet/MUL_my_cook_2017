@@ -10,5 +10,6 @@
 void credits_view(cook_t *cook)
 {
 	sfRenderWindow_clear(cook->win, sfBlack);
+	sfRenderWindow_setTitle(cook->win, "My Cook | Credits");
 	sfRenderWindow_drawSprite(cook->win, get_sprite(cook, aCreditsBg), NULL);
 }

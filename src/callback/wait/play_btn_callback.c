@@ -19,7 +19,9 @@ void btn_play_click(cook_t *cook, button_t *btn)
 
 void btn_play_released(cook_t *cook, button_t *btn)
 {
-	warning("ACTION TO START GAME");
+	cook->state = gameRun;
+	cook->last_st = gameUnknown;
+	sfRenderWindow_setTitle(cook->win, "My Cook");
 	reset_to_normal_rect(cook);
 }
 
