@@ -2,7 +2,7 @@
 
 - **Binary name:** my_cook
 - **Repository name:** my_cook_2017
-- **Repository rigths:** ramassage-tek, baptiste.tougouri@epitech.eu
+- **Repository rights:** ramassage-tek, baptiste.tougouri@epitech.eu
 - **Language:** C
 - **Group Size:** 2
 - **Compilation:** via Makefile, including re, clean and fclean rules
@@ -70,7 +70,7 @@ The following features are **mandatory** if your project is missing one of them 
 > :exclamation: The size of your repository (including the assets) must be as small as possible. Think about the format and the encoding of your resource files (sounds, musics, images, etc.).
 > An average maximal size might be 15MB, all included. Any repository exceeding this limit might not evaluated at all.
 
-> :bulb: This project might be your first group project, you should consider organising working sessions with your team mates.
+> :bulb: This project might be your first group project, you should consider organizing working sessions with your team mates.
 
 <div align="center"><img src="http://www.vertigogaming.net/CSD/wp-content/uploads/2015/05/CSD_Logo.png" alt="" /></div>
 
