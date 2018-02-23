@@ -62,4 +62,4 @@ dkms.conf
 build/
 include/my.h
 my_cook
-config.clang_complete
+.clang_complete
