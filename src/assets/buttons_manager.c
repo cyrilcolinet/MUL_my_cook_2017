@@ -19,7 +19,6 @@ void callback(cook_t *cook, button_t conf)
 			tmp->next->onStart = conf.onStart;
 			break;
 		}
-
 		tmp = tmp->next;
 	}
 }
@@ -60,7 +59,6 @@ button_t *is_button(cook_t *cook, int x, int y)
 			if (y >= pos.y && y <= (pos.y + rec.height))
 				if (cook->state == tmp->next->state)
 					return (tmp->next);
-
 		tmp = tmp->next;
 	}
 
@@ -77,7 +75,6 @@ void draw_buttons(cook_t *cook)
 			sprite = tmp->next->sprite;
 			sfRenderWindow_drawSprite(cook->win, sprite, NULL);
 		}
-
 		tmp = tmp->next;
 	}
 }
@@ -94,7 +91,6 @@ void reset_to_normal_rect(cook_t *cook)
 			rec = tmp->next->normal_rect;
 			sfSprite_setTextureRect(sprite, rec);
 		}
-
 		tmp = tmp->next;
 	}
 }
