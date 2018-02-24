@@ -18,7 +18,7 @@ void load_wait_buttons(cook_t *cook)
 void load_credits_buttons(cook_t *cook)
 {
 	button_t conf;
-	sfIntRect rec = { 291, 506, 290, 82 };
+	sfIntRect rec = { 291, 507, 290, 82 };
 	sfTexture *texture = get_texture(cook, aBtnSp);
 
 	conf.type = btnReturn;
