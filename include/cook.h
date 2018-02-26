@@ -156,29 +156,23 @@ sfSprite *get_sprite(cook_t *cook, int id);
 sfTexture *get_texture(cook_t *cook, int id);
 
 // callback/play_btn_callback.c
-void 	btn_play_click(cook_t *cook, button_t *btn);
 void 	btn_play_released(cook_t *cook, button_t *btn);
-void 	btn_play_hover(cook_t *cook, button_t *btn);
 
 // callback/settings_btn_callback.c
-void 	btn_settings_click(cook_t *cook, button_t *btn);
 void 	btn_settings_released(cook_t *cook, button_t *btn);
-void 	btn_settings_hover(cook_t *cook, button_t *btn);
 
 // callback/credits_btn_callback.c
-void 	btn_credits_click(cook_t *cook, button_t *btn);
 void 	btn_credits_released(cook_t *cook, button_t *btn);
-void 	btn_credits_hover(cook_t *cook, button_t *btn);
 
 // callback/quit_btn_callback.c
-void 	btn_quit_click(cook_t *cook, button_t *btn);
 void 	btn_quit_released(cook_t *cook, button_t *btn);
-void 	btn_quit_hover(cook_t *cook, button_t *btn);
 
 // callback/return_callback.c
-void 	btn_return_click(cook_t *cook, button_t *btn);
 void 	btn_return_released(cook_t *cook, button_t *btn);
-void 	btn_return_hover(cook_t *cook, button_t *btn);
+
+// callback/default_callback.c
+void 	default_hover_callback(cook_t *cook, button_t *btn);
+void 	default_click_callback(cook_t *cook, button_t *btn);
 
 // views/credits_view.c
 void 	credits_view(cook_t *cook);

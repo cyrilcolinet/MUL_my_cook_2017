@@ -34,6 +34,8 @@ int cook_game(cook_t *cook)
 			wait_loop(cook);
 		} else if (cook->state == gameOnCredits) {
 			credits_view(cook);
+		} else if (cook->state == gameOnSettings) {
+			options_view(cook);
 		}
 
 		draw_buttons(cook);

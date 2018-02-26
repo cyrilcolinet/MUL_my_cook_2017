@@ -47,6 +47,7 @@ SRCNAMES					= 	main.c 									\
 								callback/wait/settings_btn_callback.c 	\
 								callback/wait/credits_btn_callback.c 	\
 								callback/wait/quit_btn_callback.c 		\
+								callback/default_callback.c 			\
 								views/options_view.c 					\
 								views/credits_view.c
 

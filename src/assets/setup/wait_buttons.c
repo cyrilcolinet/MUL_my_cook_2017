@@ -16,8 +16,8 @@ void setup_wait_play_btn(cook_t *cook)
 	conf.type = btnPlay;
 	conf.pos.x = 265;
 	conf.pos.y = 375;
-	conf.onClick = btn_play_click;
-	conf.onHover = btn_play_hover;
+	conf.onClick = default_click_callback;
+	conf.onHover = default_hover_callback;
 	conf.onStart = btn_play_released;
 	conf.state = gameWait;
 	conf.sprite = sfSprite_create();
@@ -40,8 +40,8 @@ void setup_wait_settings_btn(cook_t *cook)
 	conf.type = btnSettings;
 	conf.pos.x = 625;
 	conf.pos.y = 375;
-	conf.onClick = btn_settings_click;
-	conf.onHover = btn_settings_hover;
+	conf.onClick = default_click_callback;
+	conf.onHover = default_hover_callback;
 	conf.onStart = btn_settings_released;
 	conf.state = gameWait;
 	conf.sprite = sfSprite_create();
@@ -64,8 +64,8 @@ void setup_wait_credits_btn(cook_t *cook)
 	conf.type = btnCredits;
 	conf.pos.x = 265;
 	conf.pos.y = 500;
-	conf.onClick = btn_credits_click;
-	conf.onHover = btn_credits_hover;
+	conf.onClick = default_click_callback;
+	conf.onHover = default_hover_callback;
 	conf.onStart = btn_credits_released;
 	conf.state = gameWait;
 	conf.sprite = sfSprite_create();
@@ -88,8 +88,8 @@ void setup_wait_quit_btn(cook_t *cook)
 	conf.type = btnQuit;
 	conf.pos.x = 625;
 	conf.pos.y = 500;
-	conf.onClick = btn_quit_click;
-	conf.onHover = btn_quit_hover;
+	conf.onClick = default_click_callback;
+	conf.onHover = default_hover_callback;
 	conf.onStart = btn_quit_released;
 	conf.state = gameWait;
 	conf.sprite = sfSprite_create();

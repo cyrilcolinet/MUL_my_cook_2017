@@ -24,8 +24,8 @@ void load_credits_buttons(cook_t *cook)
 	conf.type = btnReturn;
 	conf.pos.x = 47;
 	conf.pos.y = 580;
-	conf.onClick = btn_return_click;
-	conf.onHover = btn_return_hover;
+	conf.onClick = default_click_callback;
+	conf.onHover = default_hover_callback;
 	conf.onStart = btn_return_released;
 	conf.state = gameOnCredits;
 	conf.sprite = sfSprite_create();
