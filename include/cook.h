@@ -89,6 +89,7 @@ typedef struct cook_t {
 		sfRenderWindow	*win;
 		state_e 		state;
 		state_e 		last_st;
+		options_t 		options;
 		assets_t 		*assets;
 		button_t 		*btn;
 }		cook_t;
@@ -112,6 +113,9 @@ cook_t 	*configure_struct(void);
 // utilities/debug_utils.c
 void 	info(char *msg);
 void 	warning(char *msg);
+
+// utilities/options_manager.c
+
 
 // events/events_manager.c
 void 	mouse_manager(cook_t *cook, sfEvent *event);
