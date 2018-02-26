@@ -28,16 +28,6 @@ int cook_game(cook_t *cook)
 	while (sfRenderWindow_isOpen(cook->win)) {
 		poll_event(cook, &event);
 		sfRenderWindow_clear(cook->win, sfBlack);
-
-		// Pointer sur function
-/*		if (cook->state == gameWait) {
-			wait_loop(cook);
-		} else if (cook->state == gameOnCredits) {
-			credits_view(cook);
-		} else if (cook->state == gameOnSettings) {
-			options_view(cook);
-		}
-*/
 		fct_pointers(cook);
 		draw_buttons(cook);
 		sfRenderWindow_display(cook->win);

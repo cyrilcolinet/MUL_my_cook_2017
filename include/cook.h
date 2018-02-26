@@ -116,6 +116,8 @@ void 	warning(char *msg);
 
 // utilities/options_manager.c
 
+//utilities/fct_pointers.c
+void fct_pointers(cook_t *cook);
 
 // events/events_manager.c
 void 	mouse_manager(cook_t *cook, sfEvent *event);
