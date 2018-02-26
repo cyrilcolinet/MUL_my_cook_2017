@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2018
 ** fct pointers
 ** File description:
-** 
+** array of pointers of the function representating the states of the game
 */
 
 #include "cook.h"
