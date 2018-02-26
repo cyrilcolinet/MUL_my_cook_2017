@@ -89,7 +89,6 @@ OBJ 						= 	$($SRC:.c=.o)
 
 all: 						$(BUILDDIR) $(LIBMY) $(NAME)
 							@$(call SUCCESS, "Project successfully compiled.")
-							@clear
 
 tests_run: 					$(BUILDTESTDIR) $(LIBMY) $(UNIT)
 							@$(call SUCCESS, "Unitary tests successfully compiled.")
