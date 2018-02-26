@@ -34,13 +34,14 @@ SRCNAMES					= 	main.c 									\
 								utilities/struct_utils.c 				\
 								utilities/debug_utils.c 				\
 								utilities/options_manager.c 			\
+								utilities/fct_pointers.c				\
+								utilities/windows_utils.c 				\
 								events/events_manager.c 				\
 								events/mouse_events.c 					\
 								assets/buttons_loader.c 				\
 								assets/buttons_manager.c 				\
 								assets/assets_manager.c 				\
 								assets/setup/wait_buttons.c 			\
-								utilities/windows_utils.c 				\
 								assets/sprite_manager.c 				\
 								callback/return_callback.c 				\
 								callback/wait/play_btn_callback.c 		\
