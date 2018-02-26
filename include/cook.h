@@ -25,7 +25,7 @@
 
 // Struct prototype
 struct 	pos_t;
-struct 	buton_t;
+struct 	button_t;
 struct 	texture_t;
 struct 	assets_t;
 struct 	cook_t;
