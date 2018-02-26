@@ -55,9 +55,9 @@ button_t *is_button(cook_t *cook, int x, int y)
 		pos = tmp->next->pos;
 		rec = tmp->next->rect;
 
-		if (x >= pos.x && x <= (pos.x + rec.width))
-			if (y >= pos.y && y <= (pos.y + rec.height))
-				if (cook->state == tmp->next->state)
+		if (cook->state == tmp->next->state)
+			if (x >= pos.x && x <= (pos.x + rec.width))
+				if (y >= pos.y && y <= (pos.y + rec.height))
 					return (tmp->next);
 		tmp = tmp->next;
 	}
