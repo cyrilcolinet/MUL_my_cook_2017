@@ -81,6 +81,10 @@ typedef struct assets_t {
 		struct assets_t *next;
 } 		assets_t;
 
+typedef struct options_t {
+		int 			volume;
+} 		options_t;
+
 typedef struct cook_t {
 		sfRenderWindow	*win;
 		state_e 		state;
