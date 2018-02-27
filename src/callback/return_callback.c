@@ -14,5 +14,4 @@ void btn_return_released(cook_t *cook, button_t *btn)
 	reset_to_normal_rect(cook);
 	cook->state = cook->last_st;
 	cook->last_st = gameUnknown;
-	reset_to_normal_rect(cook);
 }
