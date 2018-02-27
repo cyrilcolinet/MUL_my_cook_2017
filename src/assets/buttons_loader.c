@@ -15,6 +15,11 @@ void load_wait_buttons(cook_t *cook)
 	setup_wait_credits_btn(cook);
 }
 
+void load_settings_buttons(cook_t *cook)
+{
+	setup_return_settings_button(cook);
+}
+
 void load_credits_buttons(cook_t *cook)
 {
 	button_t conf;

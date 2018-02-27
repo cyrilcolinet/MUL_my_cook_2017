@@ -31,6 +31,7 @@ int new_asset(cook_t *cook, texture_t texture)
 void load_buttons(cook_t *cook)
 {
 	load_wait_buttons(cook);
+	load_settings_buttons(cook);
 	load_credits_buttons(cook);
 }
 

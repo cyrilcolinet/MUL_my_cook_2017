@@ -139,6 +139,7 @@ int 	load_assets(cook_t *cook);
 // assets/button_loader.c
 void 	load_wait_buttons(cook_t *cook);
 void 	load_credits_buttons(cook_t *cook);
+void 	load_settings_buttons(cook_t *cook);
 
 // assets/button_manager.c
 void 	callback(cook_t *cook, button_t conf);
@@ -152,6 +153,9 @@ void 	setup_wait_play_btn(cook_t *cook);
 void 	setup_wait_settings_btn(cook_t *cook);
 void 	setup_wait_quit_btn(cook_t *cook);
 void 	setup_wait_credits_btn(cook_t *cook);
+
+// assets/setup/options_buttons.c
+void 	setup_return_settings_button(cook_t *cook);
 
 // assets/sprite_manager.c
 sfSprite *get_sprite(cook_t *cook, int id);
