@@ -32,7 +32,6 @@ SRCNAMES					= 	main.c 									\
 								game/wait/wait_loop.c 					\
 								utilities/args_handling.c 				\
 								utilities/struct_utils.c 				\
-								utilities/debug_utils.c 				\
 								utilities/options_manager.c 			\
 								utilities/fct_pointers.c				\
 								utilities/windows_utils.c 				\
@@ -51,7 +50,9 @@ SRCNAMES					= 	main.c 									\
 								callback/wait/quit_btn_callback.c 		\
 								callback/default_callback.c 			\
 								views/options_view.c 					\
-								views/credits_view.c
+								views/credits_view.c 					\
+								debug/logger.c 							\
+								debug/buttons_debugger.c
 
 SRC 						= 	$(addprefix $(SRCDIR), $(SRCNAMES))
 
