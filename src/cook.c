@@ -5,7 +5,6 @@
 ** cook functions
 */
 
-# include "debug.h"
 # include "cook.h"
 
 void exit_game(cook_t *cook)
@@ -25,7 +24,6 @@ int cook_game(cook_t *cook)
 		return (status);
 
 	info("Starting game loop...");
-	print_buttons(cook);
 	while (sfRenderWindow_isOpen(cook->win)) {
 		poll_event(cook, &event);
 		sfRenderWindow_clear(cook->win, sfBlack);

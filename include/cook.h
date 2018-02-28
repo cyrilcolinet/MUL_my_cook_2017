@@ -15,9 +15,8 @@
 # define aWaitBg 		(0)
 # define aBtnSp		 	(1)
 # define aPauseBg 		(2)
-# define aOptBg 		(3)
+# define aOptionsBg		(3)
 # define aCreditsBg 	(4)
-# define aOptionsBg		(5)
 
 // cook.c
 void 	exit_game(cook_t *cook);
@@ -41,7 +40,7 @@ void 	warning(char *msg);
 
 // utilities/options_manager.c
 
-//utilities/fct_pointers.c
+// utilities/fct_pointers.c
 void 	fct_pointers(cook_t *cook);
 
 // events/events_manager.c
@@ -59,6 +58,7 @@ void 	mouse_moved(cook_t *cook, sfMouseMoveEvent mouse);
 // assets/assets_manager.c
 int 	new_asset(cook_t *cook, texture_t texture);
 void 	load_buttons(cook_t *cook);
+int 	create_texture(cook_t *cook, int id, char *file);
 int 	load_assets(cook_t *cook);
 
 // assets/button_loader.c

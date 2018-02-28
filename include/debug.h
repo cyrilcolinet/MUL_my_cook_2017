@@ -20,4 +20,8 @@ void 	print_key_value_int(char *key, int value);
 void 	print_buttons_infos(button_t *btn, char *bt[], char *st[]);
 void 	print_buttons(cook_t *cook);
 
+// debug/assets_debugger.c
+void 	print_assets_infos(assets_t *asset, char *id[]);
+void 	print_assets(cook_t *cook);
+
 # endif

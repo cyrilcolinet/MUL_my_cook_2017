@@ -46,6 +46,7 @@ typedef enum btnType_e {
 
 typedef struct texture_t {
 		int 			id;
+		char 			*file;
 		sfTexture 		*texture;
 		sfSprite 		*sp;
 } 		texture_t;
@@ -65,6 +66,7 @@ typedef struct button_t {
 
 typedef struct assets_t {
 		int 			id;
+		char 			*file;
 		sfTexture 		*texture;
 		sfSprite 		*sp;
 		sfIntRect 		rec;

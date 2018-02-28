@@ -53,7 +53,8 @@ SRCNAMES					= 	main.c 									\
 								views/options_view.c 					\
 								views/credits_view.c 					\
 								debug/logger.c 							\
-								debug/buttons_debugger.c
+								debug/buttons_debugger.c 				\
+								debug/assets_debugger.c
 
 SRC 						= 	$(addprefix $(SRCDIR), $(SRCNAMES))
 

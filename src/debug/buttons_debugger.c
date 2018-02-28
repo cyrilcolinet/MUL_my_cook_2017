@@ -10,13 +10,11 @@
 
 void print_buttons_infos(button_t *btn, char *bt[], char *st[])
 {
-	if (debug) {
-		info("Print button: ->");
-		print_key_value_str("type", bt[btn->type]);
-		print_key_value_int("pos.x", btn->pos.x);
-		print_key_value_int("pos.y", btn->pos.y);
-		print_key_value_str("state", st[btn->state]);
-	}
+	info("Print button: ->");
+	print_key_value_str("type", bt[btn->type]);
+	print_key_value_int("pos.x", btn->pos.x);
+	print_key_value_int("pos.y", btn->pos.y);
+	print_key_value_str("state", st[btn->state]);
 }
 
 void print_buttons(cook_t *cook)
@@ -31,6 +29,8 @@ void print_buttons(cook_t *cook)
 		"gameOnSettings", "gameOnCredits"
 	};
 
+	my_putstr("\n");
+	info("----------------");
 	while (tmp->next != NULL && debug) {
 		print_buttons_infos(tmp->next, bt, st);
 		tmp = tmp->next;

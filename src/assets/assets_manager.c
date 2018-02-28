@@ -5,6 +5,7 @@
 ** assets_manager functions
 */
 
+# include "debug.h"
 # include "cook.h"
 
 int new_asset(cook_t *cook, texture_t texture)
@@ -20,10 +21,10 @@ int new_asset(cook_t *cook, texture_t texture)
 		return (84);
 
 	tmp->next->texture = texture.texture;
+	tmp->next->file = texture.file;
 	tmp->next->sp = texture.sp;
 	tmp->next->id = texture.id;
 	tmp->next->next = NULL;
-	info("New texture loaded!");
 
 	return (0);
 }
@@ -35,47 +36,35 @@ void load_buttons(cook_t *cook)
 	load_credits_buttons(cook);
 }
 
+int create_texture(cook_t *cook, int id, char *file)
+{
+	texture_t texture;
+
+	texture.id = id;
+	texture.file = file;
+	texture.texture = sfTexture_createFromFile(texture.file, NULL);
+
+	if (texture.texture == NULL)
+		return (84);
+
+	texture.sp = sfSprite_create();
+	sfSprite_setTexture(texture.sp, texture.texture, sfFalse);
+
+	return (new_asset(cook, texture));
+}
+
 int load_assets(cook_t *cook)
 {
 	int status = 0;
-	texture_t text;
 
-	text.id = aWaitBg;
-	text.texture = sfTexture_createFromFile("assets/main_menu.png", NULL);
-	text.sp = sfSprite_create();
-	sfSprite_setTexture(text.sp, text.texture, sfFalse);
-	status = new_asset(cook, text);
-
-	text.id = aBtnSp;
-	text.texture = sfTexture_createFromFile("assets/buttons.png", NULL);
-	text.sp = sfSprite_create();
-	status = new_asset(cook, text);
-
-	text.id = aPauseBg;
-	text.texture = sfTexture_createFromFile("assets/pause_menu.png", NULL);
-	text.sp = sfSprite_create();
-	sfSprite_setTexture(text.sp, text.texture, sfFalse);
-	status = new_asset(cook, text);
-
-	text.id = aOptBg;
-	text.texture = sfTexture_createFromFile("assets/options_menu.png", NULL);
-	text.sp = sfSprite_create();
-	sfSprite_setTexture(text.sp, text.texture, sfFalse);
-	status = new_asset(cook, text);
-
-	text.id = aCreditsBg;
-	text.texture = sfTexture_createFromFile("assets/credits_menu.png", NULL);
-	text.sp = sfSprite_create();
-	sfSprite_setTexture(text.sp, text.texture, sfFalse);
-	status = new_asset(cook, text);
-
-	text.id = aOptionsBg;
-	text.texture = sfTexture_createFromFile("assets/options_menu.png", NULL);
-	text.sp = sfSprite_create();
-	sfSprite_setTexture(text.sp, text.texture, sfFalse);
-	status = new_asset(cook, text);
-
+	create_texture(cook, aWaitBg, "assets/main_menu.png");
+	create_texture(cook, aBtnSp, "assets/buttons.png");
+	create_texture(cook, aPauseBg, "assets/pause_menu.png");
+	create_texture(cook, aOptionsBg, "assets/options_menu.png");
+	create_texture(cook, aCreditsBg, "assets/credits_menu.png");
 	load_buttons(cook);
+	print_assets(cook);
+	print_buttons(cook);
 
 	return (status);
 }
