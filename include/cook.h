@@ -82,6 +82,9 @@ void 	setup_wait_credits_btn(cook_t *cook);
 // assets/setup/options_buttons.c
 void 	setup_return_settings_button(cook_t *cook);
 
+// assets/setup/credits_buttons.c
+void 	setup_return_credits_button(cook_t *cook);
+
 // assets/sprite_manager.c
 sfSprite *get_sprite(cook_t *cook, int id);
 sfTexture *get_texture(cook_t *cook, int id);

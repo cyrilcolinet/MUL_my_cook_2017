@@ -33,7 +33,6 @@ int cook_game(cook_t *cook)
 		draw_buttons(cook);
 		sfRenderWindow_display(cook->win);
 	}
-
 	info("Window closed. Exiting...");
 	exit_game(cook);
 
