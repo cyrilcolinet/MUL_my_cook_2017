@@ -68,12 +68,19 @@ void 	load_wait_buttons(cook_t *cook);
 void 	load_credits_buttons(cook_t *cook);
 void 	load_settings_buttons(cook_t *cook);
 
-// assets/button_manager.c
-void 	callback(button_t *btn, button_t conf);
+// assets/sliders_loader.c
+void 	load_options_sliders(cook_t *cook);
+
+// assets/buttons_manager.c
+void 	callback_btn(button_t *btn, button_t conf);
 void 	add_button(cook_t *cook, button_t conf);
 button_t *is_button(cook_t *cook, int x, int y);
 void 	draw_buttons(cook_t *cook);
 void 	reset_to_normal_rect(cook_t *cook);
+
+// assets/sliders_manager.c
+void 	callback_slide(slider_t *slide, slider_t conf);
+void 	add_slider(cook_t *cook, slider_t conf);
 
 // assets/setup/wait_buttons.c
 void 	setup_wait_play_btn(cook_t *cook);

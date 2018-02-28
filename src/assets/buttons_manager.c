@@ -7,7 +7,7 @@
 
 # include "cook.h"
 
-void callback(button_t *btn, button_t conf)
+void callback_btn(button_t *btn, button_t conf)
 {
 	btn->state = conf.state;
 	btn->onClick = conf.onClick;
@@ -34,7 +34,7 @@ void add_button(cook_t *cook, button_t conf)
 	tmp->next->sprite = conf.sprite;
 	tmp->next->next = NULL;
 
-	callback(tmp->next, conf);
+	callback_btn(tmp->next, conf);
 }
 
 button_t *is_button(cook_t *cook, int x, int y)

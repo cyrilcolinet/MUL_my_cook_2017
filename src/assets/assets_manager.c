@@ -38,8 +38,7 @@ void load_buttons(cook_t *cook)
 
 void load_sliders(cook_t *cook)
 {
-	//tmp
-	cook->slides->next = NULL;
+	load_options_sliders(cook);
 }
 
 int create_texture(cook_t *cook, int id, char *file)
