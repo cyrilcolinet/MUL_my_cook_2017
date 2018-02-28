@@ -67,6 +67,7 @@ int load_assets(cook_t *cook)
 	create_texture(cook, aPauseBg, "assets/pause_menu.png");
 	create_texture(cook, aOptionsBg, "assets/options_menu.png");
 	create_texture(cook, aCreditsBg, "assets/credits_menu.png");
+	create_texture(cook, aHoomansSp, "assets/hoomans.png");
 	load_buttons(cook);
 	load_sliders(cook);
 	print_assets(cook);

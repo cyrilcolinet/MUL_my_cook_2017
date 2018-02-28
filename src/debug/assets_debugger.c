@@ -21,7 +21,8 @@ void print_assets_infos(assets_t *asset, char *id[])
 void print_assets(cook_t *cook)
 {
 	char *id[] = {
-		"aWaitBg", "aBtnSp", "aPauseBg", "aOptionsBg", "aCreditsBg"
+		"aWaitBg", "aBtnSp", "aPauseBg", "aOptionsBg", "aCreditsBg",
+		"aHoomansSp"
 	};
 	assets_t *tmp = cook->assets;
 

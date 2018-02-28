@@ -17,7 +17,7 @@
 # define aPauseBg 		(2)
 # define aOptionsBg		(3)
 # define aCreditsBg 	(4)
-
+# define aHoomansSp	(5)
 // cook.c
 void 	exit_game(cook_t *cook);
 int		cook_game(cook_t *cook);
