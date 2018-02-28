@@ -46,7 +46,8 @@ typedef enum btnType_e {
 } 		btnType_e;
 
 typedef enum slideType_e {
-		slideVolume
+		slideVolume,
+		slideNull
 }		slideType_e;
 
 // Structs declarations
@@ -59,6 +60,7 @@ typedef struct texture_t {
 
 typedef struct slider_t {
 		slideType_e		type;
+		sfVector2f		range;
 		void 			(*onSlide)(struct cook_t *, struct slider_t *);
 		state_e 		state;
 		sfSprite 		*sprite;

@@ -38,7 +38,8 @@ void load_buttons(cook_t *cook)
 
 void load_sliders(cook_t *cook)
 {
-	
+	//tmp
+	cook->slides->next = NULL;
 }
 
 int create_texture(cook_t *cook, int id, char *file)
@@ -68,8 +69,10 @@ int load_assets(cook_t *cook)
 	create_texture(cook, aOptionsBg, "assets/options_menu.png");
 	create_texture(cook, aCreditsBg, "assets/credits_menu.png");
 	load_buttons(cook);
+	load_sliders(cook);
 	print_assets(cook);
 	print_buttons(cook);
+	print_sliders(cook);
 
 	return (status);
 }

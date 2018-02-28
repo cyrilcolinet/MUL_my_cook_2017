@@ -24,4 +24,8 @@ void 	print_buttons(cook_t *cook);
 void 	print_assets_infos(assets_t *asset, char *id[]);
 void 	print_assets(cook_t *cook);
 
+// debug/sliders_debugger.c
+void 	print_sliders_infos(slider_t *slide, char *sd[], char *st[]);
+void 	print_sliders(cook_t *cook);
+
 # endif
