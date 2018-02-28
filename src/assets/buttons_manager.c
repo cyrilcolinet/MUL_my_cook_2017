@@ -7,20 +7,12 @@
 
 # include "cook.h"
 
-void callback(cook_t *cook, button_t conf)
+void callback(button_t *btn, button_t conf)
 {
-	button_t *tmp = cook->btn;
-
-	while (tmp->next != NULL) {
-		if (tmp->next->type == conf.type) {
-			tmp->next->state = conf.state;
-			tmp->next->onClick = conf.onClick;
-			tmp->next->onHover = conf.onHover;
-			tmp->next->onStart = conf.onStart;
-			break;
-		}
-		tmp = tmp->next;
-	}
+	btn->state = conf.state;
+	btn->onClick = conf.onClick;
+	btn->onHover = conf.onHover;
+	btn->onStart = conf.onStart;
 }
 
 void add_button(cook_t *cook, button_t conf)
@@ -42,7 +34,7 @@ void add_button(cook_t *cook, button_t conf)
 	tmp->next->sprite = conf.sprite;
 	tmp->next->next = NULL;
 
-	callback(cook, conf);
+	callback(tmp->next, conf);
 }
 
 button_t *is_button(cook_t *cook, int x, int y)

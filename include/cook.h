@@ -42,7 +42,7 @@ void 	warning(char *msg);
 // utilities/options_manager.c
 
 //utilities/fct_pointers.c
-void fct_pointers(cook_t *cook);
+void 	fct_pointers(cook_t *cook);
 
 // events/events_manager.c
 void 	mouse_manager(cook_t *cook, sfEvent *event);
@@ -67,7 +67,7 @@ void 	load_credits_buttons(cook_t *cook);
 void 	load_settings_buttons(cook_t *cook);
 
 // assets/button_manager.c
-void 	callback(cook_t *cook, button_t conf);
+void 	callback(button_t *btn, button_t conf);
 void 	add_button(cook_t *cook, button_t conf);
 button_t *is_button(cook_t *cook, int x, int y);
 void 	draw_buttons(cook_t *cook);
