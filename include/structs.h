@@ -44,12 +44,26 @@ typedef enum btnType_e {
 		btnNull
 } 		btnType_e;
 
+typedef enum slideType_e {
+		slideVolume
+}		slideType_e;
+
 typedef struct texture_t {
 		int 			id;
 		char 			*file;
 		sfTexture 		*texture;
 		sfSprite 		*sp;
 } 		texture_t;
+
+typedef struct slider_t {
+		slideType_e		type;
+		void 			(*onSlide)(struct cook_t *, struct slider_t *);
+		state_e 		state;
+		sfSprite 		*sprite;
+		sfIntRect 		rect;
+		sfIntRect 		normal_rect;
+		struct slide_t 	*next;
+} 		slider_t;
 
 typedef struct button_t {
 		btnType_e 		type;
