@@ -36,6 +36,11 @@ void load_buttons(cook_t *cook)
 	load_credits_buttons(cook);
 }
 
+void load_sliders(cook_t *cook)
+{
+	
+}
+
 int create_texture(cook_t *cook, int id, char *file)
 {
 	texture_t texture;

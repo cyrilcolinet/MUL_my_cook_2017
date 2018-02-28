@@ -34,6 +34,19 @@ void destroy_assets(cook_t *cook)
 	info("All assets destroyed!");
 }
 
+void destroy_slides(cook_t *cook)
+{
+	slider_t *tmp = cook->slides;
+
+	while (tmp->next != NULL) {
+		sfSprite_destroy(tmp->next->sprite);
+		tmp = tmp->next;
+	}
+
+	cook->slides = NULL;
+	info("All sliders destroyed!");
+}
+
 cook_t *configure_struct(void)
 {
 	cook_t *cook = malloc(sizeof(cook_t));
@@ -48,12 +61,12 @@ cook_t *configure_struct(void)
 	cook->win = sfRenderWindow_create(mode, title, sfClose, NULL);
 	cook->assets = malloc(sizeof(assets_t));
 	cook->btn = malloc(sizeof(button_t));
-	if (!cook->assets || !cook->btn || !cook->win)
+	cook->slides = malloc(sizeof(slider_t));
+	if (!cook->assets || !cook->btn || !cook->win || !cook->slides)
 		return (NULL);
 	sfRenderWindow_setFramerateLimit(cook->win, 60);
 	set_favicon(cook);
 	cook->assets->next = NULL;
 	cook->btn->next = NULL;
-
 	return (cook);
 }

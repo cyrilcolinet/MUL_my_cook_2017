@@ -64,7 +64,7 @@ typedef struct slider_t {
 		sfSprite 		*sprite;
 		sfIntRect 		rect;
 		sfIntRect 		normal_rect;
-		struct slide_t 	*next;
+		struct slider_t *next;
 } 		slider_t;
 
 typedef struct button_t {
@@ -100,6 +100,7 @@ typedef struct cook_t {
 		options_t 		options;
 		assets_t 		*assets;
 		button_t 		*btn;
+		slider_t 		*slides;
 }		cook_t;
 
 # endif

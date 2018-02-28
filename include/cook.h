@@ -32,6 +32,7 @@ int 	check_arguments(int ac, char **av);
 // utilities/struct_utils.c
 void 	destroy_buttons(cook_t *cook);
 void 	destroy_assets(cook_t *cook);
+void 	destroy_slides(cook_t *cook);
 cook_t 	*configure_struct(void);
 
 // utilities/debug_utils.c
@@ -58,6 +59,7 @@ void 	mouse_moved(cook_t *cook, sfMouseMoveEvent mouse);
 // assets/assets_manager.c
 int 	new_asset(cook_t *cook, texture_t texture);
 void 	load_buttons(cook_t *cook);
+void 	load_sliders(cook_t *cook);
 int 	create_texture(cook_t *cook, int id, char *file);
 int 	load_assets(cook_t *cook);
 
