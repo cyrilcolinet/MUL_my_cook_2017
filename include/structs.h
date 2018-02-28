@@ -13,17 +13,18 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-// Struct prototype
-struct 	pos_t;
-struct 	button_t;
+// Struct prototypes
 struct 	texture_t;
+struct 	slider_t;
+struct 	button_t;
 struct 	assets_t;
+struct 	options_t;
 struct 	cook_t;
 
 // Debug global variable
 bool 	debug;
 
-// Struct typedef
+// Enumerations declarations
 typedef enum state_e {
 		gameUnknown,
 		gameWait,
@@ -48,6 +49,7 @@ typedef enum slideType_e {
 		slideVolume
 }		slideType_e;
 
+// Structs declarations
 typedef struct texture_t {
 		int 			id;
 		char 			*file;
