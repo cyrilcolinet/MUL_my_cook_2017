@@ -10,7 +10,7 @@
 void setup_volume_settings_button(cook_t *cook)
 {
 	button_t conf;
-	sfIntRect rec = { 291, 507, 290, 82 };
+	sfIntRect rec = { 582, 1, 75, 82 };
 	sfTexture *texture = get_texture(cook, aBtnSp);
 
 	conf.type = btnVolume;
