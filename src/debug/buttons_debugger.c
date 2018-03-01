@@ -29,7 +29,7 @@ void print_buttons(cook_t *cook)
 		"gameOnSettings", "gameOnCredits"
 	};
 
-	my_putstr("\n");
+	info("\n");
 	info("----------------");
 	while (tmp->next != NULL && debug) {
 		print_buttons_infos(tmp->next, bt, st);

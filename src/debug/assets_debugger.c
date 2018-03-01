@@ -26,7 +26,7 @@ void print_assets(cook_t *cook)
 	};
 	assets_t *tmp = cook->assets;
 
-	my_putstr("\n");
+	info("\n");
 	info("----------------");
 	while (tmp->next != NULL && debug) {
 		info("Print assets: ->");

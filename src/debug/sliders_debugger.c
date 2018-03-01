@@ -16,6 +16,11 @@ void print_sliders_infos(slider_t *slide, char *sd[], char *st[])
 	print_key_value_int("range.x", slide->range.x);
 	print_key_value_int("range.y", slide->range.y);
 	print_key_value_str("state", st[slide->state]);
+	my_putstr("\tPrint button: ->\n");
+	my_putstr("\t");
+	print_key_value_int("pos.x", slide->btn->pos.x);
+	my_putstr("\t");
+	print_key_value_int("pos.y", slide->btn->pos.y);
 }
 
 void print_sliders(cook_t *cook)
@@ -29,7 +34,7 @@ void print_sliders(cook_t *cook)
 		"gameOnSettings", "gameOnCredits"
 	};
 
-	my_putstr("\n");
+	info("\n");
 	info("----------------");
 	while (tmp->next != NULL && debug) {
 		print_sliders_infos(tmp->next, sd, st);
