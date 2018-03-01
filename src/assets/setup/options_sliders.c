@@ -9,5 +9,5 @@
 
 void setup_volume_options_slider(cook_t *cook)
 {
-	cook->slides->next = NULL;
+	slider_t conf;
 }
