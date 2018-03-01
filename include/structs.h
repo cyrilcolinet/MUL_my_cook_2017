@@ -42,6 +42,8 @@ typedef enum btnType_e {
 		btnQuit,
 		btnSettings,
 		btnReturn,
+		btnMute,
+		btnVolume,
 		btnNull
 } 		btnType_e;
 

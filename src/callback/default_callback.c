@@ -28,3 +28,11 @@ void default_click_callback(cook_t *cook, button_t *btn)
 
 	sfSprite_setTextureRect(btn->sprite, rec);
 }
+
+void nothing_callback(cook_t *cook, button_t *btn)
+{
+	(void)btn;
+
+	reset_to_normal_rect(cook);
+	return;
+}

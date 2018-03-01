@@ -17,6 +17,7 @@ void load_wait_buttons(cook_t *cook)
 
 void load_settings_buttons(cook_t *cook)
 {
+	setup_volume_settings_button(cook);
 	setup_return_settings_button(cook);
 }
 

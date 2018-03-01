@@ -70,19 +70,3 @@ void draw_buttons(cook_t *cook)
 		tmp = tmp->next;
 	}
 }
-
-void reset_to_normal_rect(cook_t *cook)
-{
-	button_t *tmp = cook->btn;
-	sfSprite *sprite = NULL;
-	sfIntRect rec;
-
-	while (tmp->next != NULL) {
-		if (tmp->next->state == cook->state) {
-			sprite = tmp->next->sprite;
-			rec = tmp->next->normal_rect;
-			sfSprite_setTextureRect(sprite, rec);
-		}
-		tmp = tmp->next;
-	}
-}

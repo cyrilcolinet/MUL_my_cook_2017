@@ -35,6 +35,7 @@ SRCNAMES					= 	main.c 									\
 								utilities/options_manager.c 			\
 								utilities/fct_pointers.c				\
 								utilities/windows_utils.c 				\
+								utilities/rect_utils.c 					\
 								events/events_manager.c 				\
 								events/mouse_events.c 					\
 								assets/buttons_loader.c 				\

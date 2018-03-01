@@ -42,6 +42,10 @@ void 	warning(char *msg);
 
 // utilities/options_manager.c
 
+// utilities/rect_utils.c
+void 	reset_sliders_rect(cook_t *cook);
+void 	reset_to_normal_rect(cook_t *cook);
+
 // utilities/fct_pointers.c
 void 	fct_pointers(cook_t *cook);
 
@@ -77,7 +81,6 @@ void 	callback_btn(button_t *btn, button_t conf);
 void 	add_button(cook_t *cook, button_t conf);
 button_t *is_button(cook_t *cook, int x, int y);
 void 	draw_buttons(cook_t *cook);
-void 	reset_to_normal_rect(cook_t *cook);
 
 // assets/sliders_manager.c
 void 	callback_slide(slider_t *slide, slider_t conf);
@@ -90,6 +93,7 @@ void 	setup_wait_quit_btn(cook_t *cook);
 void 	setup_wait_credits_btn(cook_t *cook);
 
 // assets/setup/options_buttons.c
+void 	setup_volume_settings_button(cook_t *cook);
 void 	setup_return_settings_button(cook_t *cook);
 
 // assets/setup/options_sliders.c
@@ -120,6 +124,7 @@ void 	btn_return_released(cook_t *cook, button_t *btn);
 // callback/default_callback.c
 void 	default_hover_callback(cook_t *cook, button_t *btn);
 void 	default_click_callback(cook_t *cook, button_t *btn);
+void 	nothing_callback(cook_t *cook, button_t *btn);
 
 // views/credits_view.c
 void 	credits_view(cook_t *cook);
