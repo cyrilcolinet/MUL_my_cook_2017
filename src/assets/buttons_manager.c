@@ -71,12 +71,12 @@ void draw_buttons(cook_t *cook)
 	}
 }
 
-button_t *get_button(cook_t *cook, btnType_e type)
+button_t *get_button(cook_t *cook, btnType_e type, state_e state)
 {
 	button_t *tmp = cook->btn;
 
 	while (tmp->next != NULL) {
-		if (cook->state == tmp->next->state)
+		if (state == tmp->next->state)
 			if (tmp->next->type == type)
 				return (tmp->next);
 		tmp = tmp->next;

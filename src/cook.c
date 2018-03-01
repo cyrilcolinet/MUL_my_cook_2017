@@ -13,6 +13,7 @@ void exit_game(cook_t *cook)
 	destroy_buttons(cook);
 	destroy_slides(cook);
 	sfRenderWindow_destroy(cook->win);
+	sfSound_destroy(cook->sound);
 	info("Window destroyed!");
 }
 

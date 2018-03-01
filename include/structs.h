@@ -99,6 +99,7 @@ typedef struct options_t {
 
 typedef struct cook_t {
 		sfRenderWindow	*win;
+		sfSound 		*sound;
 		state_e 		state;
 		state_e 		last_st;
 		options_t 		options;

@@ -80,7 +80,7 @@ void 	callback_btn(button_t *btn, button_t conf);
 void 	add_button(cook_t *cook, button_t conf);
 button_t *is_button(cook_t *cook, int x, int y);
 void 	draw_buttons(cook_t *cook);
-button_t *get_button(cook_t *cook, btnType_e type);
+button_t *get_button(cook_t *cook, btnType_e type, state_e state);
 
 // assets/sliders_manager.c
 void 	callback_slide(slider_t *slide, slider_t conf);
