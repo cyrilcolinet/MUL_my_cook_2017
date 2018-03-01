@@ -79,9 +79,6 @@ typedef struct slider_t {
 		int 			mid_axis;
 		void 			(*onSlide)(struct cook_t *, struct slider_t *);
 		state_e 		state;
-		sfSprite 		*sprite;
-		sfIntRect 		rect;
-		sfIntRect 		normal_rect;
 		button_t 		*btn;
 		struct slider_t *next;
 } 		slider_t;

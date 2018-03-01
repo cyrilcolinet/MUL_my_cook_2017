@@ -9,40 +9,51 @@
 
 void destroy_buttons(cook_t *cook)
 {
+	button_t **cpy = NULL;
 	button_t *tmp = cook->btn;
 
 	while (tmp->next != NULL) {
 		sfSprite_destroy(tmp->next->sprite);
+		cpy = &tmp;
 		tmp = tmp->next;
+		free(*cpy);
 	}
 
+	free(cook->btn);
 	cook->btn = NULL;
 	info("All buttons destroyed!");
 }
 
 void destroy_assets(cook_t *cook)
 {
+	assets_t **cpy = NULL;
 	assets_t *tmp = cook->assets;
 
 	while (tmp->next != NULL) {
 		sfSprite_destroy(tmp->next->sp);
 		sfTexture_destroy(tmp->next->texture);
+		cpy = &tmp;
 		tmp = tmp->next;
+		free(*cpy);
 	}
 
+	free(cook->assets);
 	cook->assets = NULL;
 	info("All assets destroyed!");
 }
 
 void destroy_slides(cook_t *cook)
 {
+	slider_t **cpy = NULL;
 	slider_t *tmp = cook->slides;
 
 	while (tmp->next != NULL) {
-		sfSprite_destroy(tmp->next->sprite);
+		cpy = &tmp;
 		tmp = tmp->next;
+		free(*cpy);
 	}
 
+	free(cook->slides);
 	cook->slides = NULL;
 	info("All sliders destroyed!");
 }

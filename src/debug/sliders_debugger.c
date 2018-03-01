@@ -12,6 +12,7 @@ void print_sliders_infos(slider_t *slide, char *sd[], char *st[])
 {
 	info("Print slider: ->");
 	print_key_value_str("type", sd[slide->type]);
+	print_key_value_int("midaxis", slide->mid_axis);
 	print_key_value_int("range.x", slide->range.x);
 	print_key_value_int("range.y", slide->range.y);
 	print_key_value_str("state", st[slide->state]);

@@ -43,7 +43,6 @@ void 	warning(char *msg);
 // utilities/options_manager.c
 
 // utilities/rect_utils.c
-void 	reset_sliders_rect(cook_t *cook);
 void 	reset_to_normal_rect(cook_t *cook);
 
 // utilities/fct_pointers.c
