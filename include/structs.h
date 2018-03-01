@@ -15,8 +15,8 @@
 
 // Struct prototypes
 struct 	texture_t;
-struct 	slider_t;
 struct 	button_t;
+struct 	slider_t;
 struct 	assets_t;
 struct 	options_t;
 struct 	cook_t;
@@ -58,17 +58,6 @@ typedef struct texture_t {
 		sfSprite 		*sp;
 } 		texture_t;
 
-typedef struct slider_t {
-		slideType_e		type;
-		sfVector2f		range;
-		void 			(*onSlide)(struct cook_t *, struct slider_t *);
-		state_e 		state;
-		sfSprite 		*sprite;
-		sfIntRect 		rect;
-		sfIntRect 		normal_rect;
-		struct slider_t *next;
-} 		slider_t;
-
 typedef struct button_t {
 		btnType_e 		type;
 		sfVector2f		pos;
@@ -81,6 +70,19 @@ typedef struct button_t {
 		sfIntRect 		normal_rect;
 		struct button_t *next;
 } 		button_t;
+
+typedef struct slider_t {
+		slideType_e		type;
+		sfVector2f		range;
+		int 			mid_axis;
+		void 			(*onSlide)(struct cook_t *, struct slider_t *);
+		state_e 		state;
+		sfSprite 		*sprite;
+		sfIntRect 		rect;
+		sfIntRect 		normal_rect;
+		button_t 		*btn;
+		struct slider_t *next;
+} 		slider_t;
 
 typedef struct assets_t {
 		int 			id;
