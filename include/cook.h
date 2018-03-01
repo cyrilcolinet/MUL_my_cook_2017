@@ -17,7 +17,8 @@
 # define aPauseBg 		(2)
 # define aOptionsBg		(3)
 # define aCreditsBg 	(4)
-# define aHoomansSp	(5)
+# define aHoomansSp		(5)
+
 // cook.c
 void 	exit_game(cook_t *cook);
 int		cook_game(cook_t *cook);
@@ -90,6 +91,9 @@ void 	setup_wait_credits_btn(cook_t *cook);
 
 // assets/setup/options_buttons.c
 void 	setup_return_settings_button(cook_t *cook);
+
+// assets/setup/options_sliders.c
+void 	setup_volume_options_slider(cook_t *cook);
 
 // assets/setup/credits_buttons.c
 void 	setup_return_credits_button(cook_t *cook);

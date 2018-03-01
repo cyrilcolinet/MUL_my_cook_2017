@@ -9,5 +9,5 @@
 
 void load_options_sliders(cook_t *cook)
 {
-	cook->slides->next = NULL; // fix segfault
+	setup_volume_options_slider(cook);
 }

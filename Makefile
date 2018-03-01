@@ -44,6 +44,7 @@ SRCNAMES					= 	main.c 									\
 								assets/assets_manager.c 				\
 								assets/setup/wait_buttons.c 			\
 								assets/setup/options_buttons.c 			\
+								assets/setup/options_sliders.c 			\
 								assets/setup/credits_buttons.c 			\
 								assets/sprite_manager.c 				\
 								callback/return_callback.c 				\
