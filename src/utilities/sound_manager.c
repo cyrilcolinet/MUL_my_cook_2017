@@ -16,5 +16,5 @@ void configure_audio(cook_t *cook)
 		return;
 	}
 
-	info("Sound create and ready to use.")
+	info("Sound create and ready to use.");
 }
