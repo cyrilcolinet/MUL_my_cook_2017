@@ -13,6 +13,7 @@
 # include <stdbool.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 // Struct prototypes
 struct 	texture_t;
