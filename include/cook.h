@@ -48,6 +48,9 @@ void 	reset_to_normal_rect(cook_t *cook);
 // utilities/fct_pointers.c
 void 	fct_pointers(cook_t *cook);
 
+// utilities/sound_manager.c
+void 	configure_audio(cook_t *cook);
+
 // events/events_manager.c
 void 	mouse_manager(cook_t *cook, sfEvent *event);
 void 	poll_event(cook_t *cook, sfEvent *event);
