@@ -10,7 +10,7 @@
 void setup_volume_settings_button(cook_t *cook)
 {
 	button_t conf;
-	sfIntRect rec = { 582, 1, 80, 82 };
+	sfIntRect rec = { 590, 507, 80, 82 };
 	sfVector2f origin = { (rec.width / 2), (rec.height / 2) };
 	sfTexture *texture = get_texture(cook, aBtnSp);
 
@@ -24,7 +24,7 @@ void setup_volume_settings_button(cook_t *cook)
 	conf.sprite = sfSprite_create();
 	sfSprite_setTexture(conf.sprite, texture, sfFalse);
 	sfSprite_setTextureRect(conf.sprite, rec);
-	//sfSprite_setOrigin(conf.sprite, origin);
+	sfSprite_setOrigin(conf.sprite, origin);
 	conf.rect = rec;
 	conf.next = NULL;
 	add_button(cook, conf);
@@ -34,7 +34,7 @@ void setup_volume_settings_button(cook_t *cook)
 void setup_return_settings_button(cook_t *cook)
 {
 	button_t conf;
-	sfIntRect rec = { 291, 507, 290, 82 };
+	sfIntRect rec = { 295, 507, 290, 82 };
 	sfTexture *texture = get_texture(cook, aBtnSp);
 
 	conf.type = btnReturn;

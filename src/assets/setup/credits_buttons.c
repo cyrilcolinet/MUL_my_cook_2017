@@ -10,7 +10,7 @@
 void setup_return_credits_button(cook_t *cook)
 {
 	button_t conf;
-	sfIntRect rec = { 291, 507, 290, 82 };
+	sfIntRect rec = { 295, 507, 290, 82 };
 	sfTexture *texture = get_texture(cook, aBtnSp);
 
 	conf.type = btnReturn;
