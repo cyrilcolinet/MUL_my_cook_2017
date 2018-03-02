@@ -12,7 +12,7 @@ void configure_audio(cook_t *cook)
 	cook->sound = sfSound_create();
 
 	if (cook->sound == NULL) {
-		warning("Sound equals (null) !");
+		warning("Sound equals to (null) !");
 		return;
 	}
 
