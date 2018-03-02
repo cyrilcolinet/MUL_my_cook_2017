@@ -31,7 +31,7 @@ void print_buttons(cook_t *cook)
 
 	info("\n");
 	info("----------------");
-	while (tmp->next != NULL && debug) {
+	while (debug && tmp->next != NULL) {
 		print_buttons_infos(tmp->next, bt, st);
 		tmp = tmp->next;
 	}

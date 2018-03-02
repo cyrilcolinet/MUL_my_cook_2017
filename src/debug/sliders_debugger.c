@@ -36,7 +36,7 @@ void print_sliders(cook_t *cook)
 
 	info("\n");
 	info("----------------");
-	while (tmp->next != NULL && debug) {
+	while (debug && tmp->next != NULL) {
 		print_sliders_infos(tmp->next, sd, st);
 		tmp = tmp->next;
 	}

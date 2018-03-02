@@ -62,13 +62,12 @@ cook_t *configure_struct(void)
 {
 	cook_t *cook = malloc(sizeof(cook_t));
 	sfVideoMode mode = { 1200, 700, 32 };
-	char *title = NULL;
+	char *title = "My Cook | Menu Principal";
 
 	if (cook == NULL)
 		return (NULL);
 	cook->state = gameWait;
 	cook->last_st = gameUnknown;
-	title = "My Cook | Menu Principal";
 	cook->win = sfRenderWindow_create(mode, title, sfClose, NULL);
 	cook->assets = malloc(sizeof(assets_t));
 	cook->btn = malloc(sizeof(button_t));
@@ -79,5 +78,6 @@ cook_t *configure_struct(void)
 	set_favicon(cook);
 	cook->assets->next = NULL;
 	cook->btn->next = NULL;
+	cook->slides->next = NULL;
 	return (cook);
 }

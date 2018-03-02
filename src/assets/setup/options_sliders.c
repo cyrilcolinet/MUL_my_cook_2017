@@ -11,6 +11,7 @@ void setup_volume_options_slider(cook_t *cook)
 {
 	slider_t conf;
 	sfVector2f pos = { 100, 100 };
+	sfSound_setVolume(cook->sound, 42);
 	float sound = sfSound_getVolume(cook->sound);
 
 	conf.type = slideVolume;
