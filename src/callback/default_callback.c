@@ -23,6 +23,7 @@ void default_click_callback(cook_t *cook, button_t *btn)
 	sfIntRect rec;
 	(void)cook;
 
+	btn->pressed = true;
 	rec = btn->rect;
 	rec.top += 82 * 2;
 

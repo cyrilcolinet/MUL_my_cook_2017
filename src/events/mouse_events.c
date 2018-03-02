@@ -9,10 +9,21 @@
 
 void mouse_button_pressed(cook_t *cook, sfMouseButtonEvent mouse)
 {
+	slider_t *tmp = NULL;
 	button_t *btn = is_button(cook, mouse.x, mouse.y);
 
 	if (btn != NULL) {
+		tmp = cook->slides;
 		btn->onClick(cook, btn);
+
+		/*while (tmp->next != NULL) {
+			if (tmp->next->btn->type == btn->type) {
+				tmp->next->onSlide(cook, tmp->next);
+				return;
+			}
+			tmp = tmp->next;
+		}*/
+
 		return;
 	}
 
@@ -33,10 +44,23 @@ void mouse_button_released(cook_t *cook, sfMouseButtonEvent mouse)
 
 void mouse_moved(cook_t *cook, sfMouseMoveEvent mouse)
 {
+	slider_t *tmp = NULL;
 	button_t *btn = is_button(cook, mouse.x, mouse.y);
 
 	if (btn != NULL) {
+		tmp = cook->slides;
 		btn->onHover(cook, btn);
+
+		if (btn->pressed) {
+			while (tmp->next != NULL) {
+				if (tmp->next->btn->type == btn->type) {
+					tmp->next->onSlide(cook, tmp->next);
+					return;
+				}
+				tmp = tmp->next;
+			}
+		}
+
 		return;
 	}
 

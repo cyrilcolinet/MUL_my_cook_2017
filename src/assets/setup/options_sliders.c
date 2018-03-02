@@ -11,15 +11,15 @@ void setup_volume_options_slider(cook_t *cook)
 {
 	slider_t conf;
 	sfVector2f pos = { 100, 100 };
-	sfSound_setVolume(cook->sound, 42);
-	float sound = sfSound_getVolume(cook->sound);
+	float sound = 0;
 
+	sfSound_setVolume(cook->sound, sound);
 	conf.type = slideVolume;
 	conf.mid_axis = 250;
 	conf.range.x = 760;
 	conf.range.y = 1040;
 	conf.state = gameOnSettings;
-	conf.onSlide = NULL; // TODO : Make this
+	conf.onSlide = slider_volume_callback;
 	conf.btn = get_button(cook, btnVolume, gameOnSettings);
 	pos.y = conf.mid_axis;
 	pos.x = ((sound / 100) * (conf.range.y - conf.range.x)) + conf.range.x;

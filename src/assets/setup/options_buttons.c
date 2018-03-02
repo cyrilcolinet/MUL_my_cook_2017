@@ -19,12 +19,12 @@ void setup_volume_settings_button(cook_t *cook)
 	conf.pos.y = 0;
 	conf.onClick = default_click_callback;
 	conf.onHover = default_hover_callback;
-	conf.onStart = nothing_callback; // TODO: volume_slider_callback
+	conf.onStart = nothing_callback;
 	conf.state = gameOnSettings;
 	conf.sprite = sfSprite_create();
 	sfSprite_setTexture(conf.sprite, texture, sfFalse);
 	sfSprite_setTextureRect(conf.sprite, rec);
-	sfSprite_setOrigin(conf.sprite, origin);
+	//sfSprite_setOrigin(conf.sprite, origin);
 	conf.rect = rec;
 	conf.next = NULL;
 	add_button(cook, conf);

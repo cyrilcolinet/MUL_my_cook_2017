@@ -71,7 +71,8 @@ typedef struct button_t {
 		sfSprite 		*sprite;
 		sfIntRect 		rect;
 		sfIntRect 		normal_rect;
-		struct button_t *next;
+		bool			pressed;
+		struct button_t 	*next;
 } 		button_t;
 
 typedef struct slider_t {
@@ -81,7 +82,7 @@ typedef struct slider_t {
 		void 			(*onSlide)(struct cook_t *, struct slider_t *);
 		state_e 		state;
 		button_t 		*btn;
-		struct slider_t *next;
+		struct slider_t 	*next;
 } 		slider_t;
 
 typedef struct assets_t {
@@ -90,7 +91,7 @@ typedef struct assets_t {
 		sfTexture 		*texture;
 		sfSprite 		*sp;
 		sfIntRect 		rec;
-		struct assets_t *next;
+		struct assets_t 	*next;
 } 		assets_t;
 
 typedef struct options_t {
@@ -98,7 +99,7 @@ typedef struct options_t {
 } 		options_t;
 
 typedef struct cook_t {
-		sfRenderWindow	*win;
+		sfRenderWindow		*win;
 		sfSound 		*sound;
 		state_e 		state;
 		state_e 		last_st;

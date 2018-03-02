@@ -17,6 +17,7 @@ void reset_to_normal_rect(cook_t *cook)
 		if (tmp->next->state == cook->state) {
 			sprite = tmp->next->sprite;
 			rec = tmp->next->normal_rect;
+			tmp->next->pressed = false;
 			sfSprite_setTextureRect(sprite, rec);
 		}
 		tmp = tmp->next;

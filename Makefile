@@ -50,6 +50,7 @@ SRCNAMES					= 	main.c 									\
 								assets/setup/credits_buttons.c 			\
 								assets/sprite_manager.c 				\
 								callback/return_callback.c 				\
+								callback/sliders/volume_callback.c 		\
 								callback/wait/play_btn_callback.c 		\
 								callback/wait/settings_btn_callback.c 	\
 								callback/wait/credits_btn_callback.c 	\

@@ -16,12 +16,12 @@
 # define aBtnSp		 	(1)
 # define aPauseBg 		(2)
 # define aOptionsBg		(3)
-# define aCreditsBg 	(4)
+# define aCreditsBg 		(4)
 # define aHoomansSp		(5)
 
 // cook.c
 void 	exit_game(cook_t *cook);
-int		cook_game(cook_t *cook);
+int	cook_game(cook_t *cook);
 int 	cook_main(int ac, char **av);
 
 // game/wait/wait_loop.c
@@ -128,6 +128,9 @@ void 	btn_return_released(cook_t *cook, button_t *btn);
 void 	default_hover_callback(cook_t *cook, button_t *btn);
 void 	default_click_callback(cook_t *cook, button_t *btn);
 void 	nothing_callback(cook_t *cook, button_t *btn);
+
+// callback/sliders/volume_callback.c
+void 	slider_volume_callback(cook_t *cook, slider_t *slider);
 
 // views/credits_view.c
 void 	credits_view(cook_t *cook);
