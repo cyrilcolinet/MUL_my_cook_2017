@@ -30,6 +30,7 @@ TESTSDIR					= 	tests/
 SRCNAMES					= 	main.c 									\
 								cook.c 									\
 								game/wait/wait_loop.c 					\
+								game/run/run_loop.c						\
 								utilities/args_handling.c 				\
 								utilities/struct_utils.c 				\
 								utilities/options_manager.c 			\

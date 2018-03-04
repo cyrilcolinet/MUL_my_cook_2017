@@ -12,7 +12,7 @@ void fct_pointers(cook_t *cook)
 	void (*fun_ptr_arr[])(cook_t *) = {
 		NULL,
 		wait_loop,
-		NULL,
+		run_loop,
 		NULL,
 		NULL,
 		options_view,

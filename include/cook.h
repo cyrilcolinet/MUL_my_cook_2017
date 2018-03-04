@@ -27,6 +27,9 @@ int 	cook_main(int ac, char **av);
 // game/wait/wait_loop.c
 void 	wait_loop(cook_t *cook);
 
+// game/run/run_loop.c
+void 	run_loop(cook_t *cook);
+
 // utilities/args_handling.c
 int 	check_arguments(int ac, char **av);
 
