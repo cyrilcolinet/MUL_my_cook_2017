@@ -48,6 +48,7 @@ void destroy_slides(cook_t *cook)
 	slider_t *tmp = cook->slides;
 
 	while (tmp->next != NULL) {
+		sfText_destroy(tmp->next->text);
 		cpy = &tmp;
 		tmp = tmp->next;
 		free(*cpy);

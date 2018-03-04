@@ -29,26 +29,19 @@ void add_slider(cook_t *cook, slider_t conf)
 	tmp->next->range = conf.range;
 	tmp->next->mid_axis = conf.mid_axis;
 	tmp->next->btn = conf.btn;
+	tmp->next->text = conf.text;
 	tmp->next->next = NULL;
 
 	callback_slide(tmp->next, conf);
 }
 
-slider_t *is_slider(cook_t *cook, int x, int y)
+slider_t *get_slider(cook_t *cook, slideType_e type)
 {
 	slider_t *tmp = cook->slides;
-	sfVector2f pos;
-	sfIntRect rec;
 
 	while (tmp->next != NULL) {
-		pos = tmp->next->btn->pos;
-		rec = tmp->next->btn->rect;
-
-		if (cook->state == tmp->next->state)
-			if (x >= pos.x && x <= (pos.x + rec.width))
-				if (y >= pos.y && y <= (pos.y + rec.height))
-					return (tmp->next);
-
+		if (tmp->next->type == type)
+			return (tmp->next);
 		tmp = tmp->next;
 	}
 

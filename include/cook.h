@@ -21,7 +21,7 @@
 
 // cook.c
 void 	exit_game(cook_t *cook);
-int	cook_game(cook_t *cook);
+int		cook_game(cook_t *cook);
 int 	cook_main(int ac, char **av);
 
 // game/wait/wait_loop.c
@@ -41,6 +41,8 @@ void 	info(char *msg);
 void 	warning(char *msg);
 
 // utilities/options_manager.c
+char 	*my_itoa(int nb);
+char 	*get_sound_in_str(int nb);
 
 // utilities/rect_utils.c
 void 	reset_to_normal_rect(cook_t *cook);
@@ -88,6 +90,7 @@ button_t *get_button(cook_t *cook, btnType_e type, state_e state);
 // assets/sliders_manager.c
 void 	callback_slide(slider_t *slide, slider_t conf);
 void 	add_slider(cook_t *cook, slider_t conf);
+slider_t *get_slider(cook_t *cook, slideType_e type);
 
 // assets/setup/wait_buttons.c
 void 	setup_wait_play_btn(cook_t *cook);

@@ -11,21 +11,22 @@ void setup_volume_options_slider(cook_t *cook)
 {
 	slider_t conf;
 	sfVector2f pos = { 100, 100 };
-	float sound = 0;
+	sfVector2f ori = { 100, 100 };
 
-	sfSound_setVolume(cook->sound, sound);
 	conf.type = slideVolume;
-	conf.mid_axis = 250;
-	conf.range.x = 760;
-	conf.range.y = 1040;
+	conf.mid_axis = pos.y = ori.y = 250;
+	conf.range.x = pos.x = 760;
+	conf.range.y = ori.x = 1040;
+	ori.x += 45;
+	ori.y -= 25;
 	conf.state = gameOnSettings;
 	conf.onSlide = slider_volume_callback;
 	conf.btn = get_button(cook, btnVolume, gameOnSettings);
-	pos.y = conf.mid_axis;
-	pos.x = ((sound / 100) * (conf.range.y - conf.range.x)) + conf.range.x;
+	conf.text = sfText_create();
 	conf.btn->pos = pos; // TODO: fix decallage with origin and btn position
 	sfSprite_setPosition(conf.btn->sprite, conf.btn->pos);
-
+	sfText_setPosition(conf.text, ori);
+	sfText_setFont(conf.text, cook->font);
+	sfText_setCharacterSize(conf.text, 40);
 	add_slider(cook, conf);
-	info("Configured volume slider for settings view!");
 }

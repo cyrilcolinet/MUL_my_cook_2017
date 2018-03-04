@@ -63,6 +63,7 @@ int load_assets(cook_t *cook)
 	int status = 0;
 
 	configure_audio(cook);
+	cook->font = sfFont_createFromFile("assets/GROBOLD.ttf");
 	create_texture(cook, aWaitBg, "assets/main_menu.png");
 	create_texture(cook, aBtnSp, "assets/buttons.png");
 	create_texture(cook, aPauseBg, "assets/pause_menu.png");
