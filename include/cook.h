@@ -16,7 +16,7 @@
 # define aBtnSp		 	(1)
 # define aPauseBg 		(2)
 # define aOptionsBg		(3)
-# define aCreditsBg 		(4)
+# define aCreditsBg 	(4)
 # define aHoomansSp		(5)
 
 // cook.c

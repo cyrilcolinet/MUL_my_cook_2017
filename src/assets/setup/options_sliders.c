@@ -16,6 +16,7 @@ static slider_t extra_config(cook_t *cook, slider_t conf)
 	sfText_setPosition(c.text, ori);
 	sfText_setFont(c.text, cook->font);
 	sfText_setCharacterSize(c.text, 40);
+	sfText_setString(c.text, "0%");
 
 	return (c);
 }
@@ -33,7 +34,7 @@ void setup_volume_options_slider(cook_t *cook)
 	conf.onSlide = slider_volume_callback;
 	conf.btn = get_button(cook, btnVolume, gameOnSettings);
 	conf.text = sfText_create();
-	conf.btn->pos = pos; // TODO: fix decallage with origin and btn position
+	conf.btn->pos = pos;
 
 	add_slider(cook, extra_config(cook, conf));
 }
