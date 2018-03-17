@@ -7,9 +7,13 @@
 
 # include "cook.h"
 
-int main(int ac, char **av)
+int main(int ac, char **av, char **env)
 {
-	int res = cook_main(ac, av);
+	int res;
 
+	if (*env == NULL)
+		return (84);
+	res = cook_main(ac, av);
+	
 	return (res);
 }
